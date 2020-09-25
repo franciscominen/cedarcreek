@@ -1,0 +1,137 @@
+#gallery {
+
+    .gallery__tittle {
+        color: $Blanco;
+        letter-spacing: 2px;
+        padding: 50px 0 20px 0;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            padding-top: 3.5em;
+            font-size: 35px;
+        }
+    }
+
+    .gallery__subtittle {
+        @include textos($Blanco, 20px, 200, 1.5, center);
+        padding-top: 15px;
+
+        @media (max-width: 768px) {
+            padding: 15px 20px 20px 20px;
+        }
+    }
+
+    .gallery__images {
+        @include grid(grid, center, repeat(3, 300px) 400px, 450px repeat(2, 300px), 15px, 15px, center, center);
+        list-style: none;
+        padding: 50px;
+
+        @media (max-width: 768px) {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            grid-template-columns: 35% repeat(2, 30%);
+            grid-template-rows: repeat(3, 24%) 33%;
+        }
+
+            
+        .gallery__img1, .gallery__img2, .gallery__img3, .gallery__img4, .gallery__img5, .gallery__img6, .gallery__img7 {
+            border: 3px solid $Celeste;
+            border-radius: 3px;
+            display: flex;
+            align-items: flex-end;
+            transition: .6s;
+            &:hover{
+                border: 3px solid $Naranja;
+                box-shadow: 3px 3px 3px #0000004a;
+            }
+
+            .gallery_info {
+                background: rgb(250,144,46);
+                background: linear-gradient(0deg, rgba(250,144,46,1) 0%, rgba(250,144,46,0) 100%);
+                @include sizes(100%, 16em);
+                @include flex(flex, column, wrap, flex-end, left);
+                padding: 19px;
+                text-align: left;
+                opacity: 0;
+                transition: 0.6s;
+                &:hover {
+                    opacity: 1;
+                }
+
+                h4 {
+                    color: $Blanco;
+                    font-size: 23px;
+                    margin: 0.5em 0;
+                }
+                p {
+                    @include textos($Blanco, 17px, 200, 1.5, left); 
+                    width: 90%;
+                    margin: 0;
+                    padding: 0;
+                }
+            }    
+        }
+
+        .gallery__img1 {
+            background: url(../img/Gallery/out1.png);
+            grid-area: 1 / 1 / 2 / 2;
+            @media (max-width: 768px) {
+                background-position-x: -7em;
+            }
+        }
+        .gallery__img2 {
+            background: url(../img/Gallery/out2.png);
+            grid-area: 1 / 2 / 2 / 3;
+            @media (max-width: 768px) {
+               background-size: cover;
+            }
+        }
+        .gallery__img3 {
+            background: url(../img/Gallery/out3.png);
+            grid-area: 1 / 3 / 2 / 4;
+            @media (max-width: 768px) {
+                background-size: cover;
+             }
+        }
+        .gallery__img4 {
+            background: url(../img/Gallery/out4.png);
+            grid-area: 2 / 1 / 4 / 2;
+            @media (max-width: 768px) {
+                height: 38em;
+            }
+        }
+        .gallery__img5 {
+            background: url(../img/Gallery/out5.png);
+            grid-area: 2 / 2 / 3 / 4;
+            @media (max-width: 768px) {
+                height: 230px;
+                background-size: cover;
+            }
+        }
+        .gallery__img6 {
+            background: url(../img/Gallery/out6.png);
+            grid-area: 3 / 2 / 4 / 4;
+            @media (max-width: 768px) {
+                height: 200px;
+                background-size: cover;
+            }
+        }
+        .gallery__img7 {
+            background: url(../img/Gallery/out7.png);
+            grid-area: 4 / 1 / 5 / 4;
+            @media (max-width: 768px) {
+                height: 200px;
+                background-size: cover;
+                background-position-x: -6em;
+                margin-bottom: 3em;
+            }
+            @media (min-width: 769px) and (max-width: 1200px) {
+                margin-bottom: 3em;
+            }
+        }
+    }
+}

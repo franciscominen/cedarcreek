@@ -1,0 +1,59 @@
+.btn__backhome {
+    display: block;
+    margin: 30px auto;
+    position: relative;
+    width: 160px;
+    color: $Blanco;
+    background: transparent;
+    padding: 15px 20px;
+    border: 2px solid $Blanco;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: .5s;
+    &:hover {
+        border: 2px solid $Naranja;
+        background: $Naranja;
+        color: $Blanco;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+    @media (min-width: 769px) and (max-width: 1200px) {
+        display: none;
+    }
+}
+
+.btn__mobilehome {
+    display: none;
+    position: fixed;
+    top: 90%;
+    color: $Blanco;
+    background-color: $Naranja;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #00000026;
+    z-index: 3;
+    i {
+        font-size: 25px;
+        @media (min-width: 769px) and (max-width: 1200px){
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        display: inline-block;
+    }
+    @media (min-width: 769px) and (max-width: 1200px){
+        display: inline-block;
+    }
+}
+
+.h1__sub {
+    border-bottom: 5px solid $Naranja;
+    border-radius: 4px 0;
+}
+
+

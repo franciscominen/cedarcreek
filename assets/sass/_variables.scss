@@ -1,0 +1,43 @@
+
+/* ------ COLORS -------- */
+$Celeste: #5A93B9;
+$Naranja: #FA902E;
+$Blanco: #F7F8FB;
+
+/* TITULOS */
+$TituloPrincipal: 800 45px 'Spartan', sans-serif;
+
+
+/* ---- MIXINS ---- */
+
+@mixin flex($display, $direction, $wrap, $justify, $align) {
+    display: $display;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin grid($display, $justify, $gridrows, $gridcolumns, $columngap, $gridrowgap, $jself, $aself) {
+    display: $display;
+    justify-content: $justify;
+    grid-template-rows: $gridrows;
+    grid-template-columns: $gridcolumns;
+    grid-column-gap: $columngap;
+    grid-row-gap: $gridrowgap;
+    justify-self: $jself;
+    align-self: $aself;
+}
+
+@mixin textos($color, $size, $weigth, $line, $alg) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weigth;
+    line-height: $line;
+    text-align: $alg;
+}
+ 
+@mixin sizes($ancho, $alto) {
+    width: $ancho;
+    height: $alto;
+}

@@ -1,0 +1,182 @@
+header {
+    position: sticky;
+    top: 30px;
+    z-index: 4;
+    &.header__notop {
+        top: 0px;
+    }
+
+    .menu__open, .menu__close {
+        display: none;
+    } 
+    .logo__mobile--header {
+        display: none;
+    }
+
+    @media (min-width: 769px) and (max-width: 1200px) {
+        top: 0px;
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        top: 0;
+        z-index: 3;
+
+        .mobile__header {
+            @include flex(flex, row, wrap, center, center);
+            @include sizes(90%, 60px);
+            background:$Blanco;
+            position: fixed;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 3px 3px 3px #0000004a;        
+            
+            .menu__open {
+            display: inline-block;
+            position: absolute;
+            right: 5%;
+            top: 25%;
+            width: 25px;
+            }
+
+            .logo__mobile--header {
+                display: inline-block;
+                position: absolute;
+                top: -6px;
+            }
+        }
+
+        #nav:target{
+            top: 0;
+            box-shadow: 3px 3px 3px #0000004a;
+        }
+    }
+
+    .navbar__menu{
+        @include flex(flex, row, wrap, center, center);
+        @include sizes(70em, 75px);
+        position: sticky;
+        background-color: $Blanco;
+        margin: auto;
+        border-radius: 10px;
+        z-index: 2;
+        box-shadow: 3px 3px 3px #0000004a;
+        &.navbar__menu--notop {
+            width: 100%;
+            border-radius: 0;
+        }
+
+        @media (max-width: 768px) {
+            @include flex(flex, column, wrap, space-around, center);
+            @include sizes(90%, 30em);
+            position: fixed;
+            top: -50em;
+            background-color: $Blanco;
+            border-radius: 0px 0px 30px 30px;
+            transition: 0.7s;
+            box-shadow: none;
+
+            .menu__close {
+                display: inline-block;
+                position: absolute;
+                top: 5%;
+                left: 85%;
+                width: 23px;
+            }
+
+        }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            width: 100%;
+        }
+
+        .navbar__elementos {
+            @include flex(flex, row, wrap, center, center);
+            position: relative;
+            bottom: 4px;
+    
+            @media (max-width: 768px) {
+                @include flex(flex, column, wrap, center, center);
+            }
+
+            .logo__mobile {
+                @media (max-width: 768px) {
+                position: absolute;
+                bottom: 94%;
+                }
+            }
+
+            .navbar__elemento {
+                margin: 0 30px;
+
+                @media (max-width: 768px) {
+                    margin: 20px 0;
+                }
+
+                @media (min-width: 769px) and (max-width: 1200px) {
+                    margin: 0 11px;
+                }
+    
+                .navbar__link {
+                    position: relative;
+                    color: $Celeste;
+                    font: bold 18px 'Spartan', sans-serif;
+                    padding: 7px 0;
+                    border-top: 4px solid transparent;
+                    border-bottom: 4px solid transparent;
+                    border-radius: 4px;
+                    transition: .5s;
+                    
+                    &::before, &::after {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 4px;
+                        background: $Naranja;
+                        transition: .5s;
+                        opacity: 0;
+                    }
+                    &::before{
+                        border-radius: 5px 5px 0 0;
+                        top: -6px;
+                        left: 0;
+                    }
+                    &::after{
+                        border-radius: 0 0 5px 5px;
+                        bottom: -3px;
+                        right: 0;
+                    }
+    
+                    &:hover {
+                        color: $Naranja;
+                    }
+                    &:hover::before, &:hover::after {
+                        opacity: 1;
+                        width: 100%;
+                        transition: .5s;
+                    }
+
+                    @media (max-width: 768px) {
+                        border-bottom: 4px solid $Naranja;
+                        border-top: 4px solid $Naranja;
+                        padding: 7px 0 4px 0;
+                    }
+
+                }
+        
+                .navbar__logo {
+                    position: relative;
+                    top: 12px;
+                    transition: 0.7s;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+
+                    @media (max-width: 768px) {
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

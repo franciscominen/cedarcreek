@@ -1,0 +1,465 @@
+#contact {
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        height: 78vh;
+    }
+
+
+    .modal{
+        position:fixed;
+        margin: 10px;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        opacity:0;
+        pointer-events:none;
+        transition: all 1s;
+        z-index: 3;
+
+        .modal__contenido{
+            background-color: $Celeste;
+            border: 3px solid $Naranja;
+            border-radius: 10px;
+            width:100%;
+            padding: 10px 10px;
+            position: relative;
+
+            .modal__close {
+                color: $Blanco;
+                padding: 10px;
+                background: #292828;
+                position: absolute;
+                bottom: 2%;
+                z-index: 4;
+                border-radius: 5px;
+            }
+
+            h4 {
+                font-size: 16px;
+                color: $Blanco;
+                margin-bottom: 10px;
+            }
+
+            input[type="text"] {
+                padding: 10px;
+                width: 100%;
+                background: transparent;
+                border: 2px solid $Blanco;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                transition: 0.6s;
+            }
+            label {
+                color: $Blanco;
+                font-family: 'Quicksand', sans-serif;
+            }
+
+            select {
+                padding: 8px 2px;
+                background: transparent;
+                border: 2px solid $Blanco;
+                border-radius: 5px;
+                color: $Blanco;
+                margin: 10px 0;
+                option {
+                    color: $Naranja;
+                }
+            }
+
+            input#mujer {
+                margin: 0 10px 15px 0;
+            }
+            input#hombre {
+                margin-right: 10px;
+            }
+
+            textarea {
+                width: 100%;
+                background: transparent;
+                padding: 10px;
+                border: 2px solid $Blanco;
+                border-radius: 5px;
+                transition: 0.6s;
+            }
+
+            input[type="email"] {
+                padding: 7px 3px;
+                background: transparent;
+                border: 2px solid $Blanco;
+                border-radius: 5px;
+                color: $Blanco;
+                margin: 10px 0;
+                width: 17em;
+            }
+
+            input[type="submit"] {
+                @include textos($Celeste, 16px, 600, 1, center);              
+                font-family: 'Quicksand', sans-serif;
+                background-color: $Blanco;
+                padding: 10px 6px;
+                border: none;
+                border-radius: 5px;
+                position: relative;
+                left: 49%;
+                transition: 0.6s;
+                &:hover {
+                    background: limegreen;
+                    color: white;
+                    box-shadow: 3px 3px 3px #0000003d;
+                }
+            }
+
+            input[type="reset"] {
+                @include textos($Blanco, 16px, 600, 1, center); 
+                background-color: red;
+                padding: 10px 15px;
+                font-family: 'Quicksand', sans-serif;
+                border: none;
+                border-radius: 5px;
+                position: relative;
+                left: 46%;
+                transition: 0.6s;
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 3px 3px 3px #0000003d;
+                }
+            }
+
+            ::placeholder {
+                color: $Blanco;
+                font-family: 'Quicksand', sans-serif;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .modal__btn {
+        display: none;
+
+        @media (max-width: 768px) {
+            @include flex(flex, row, wrap, center, center);
+            @include textos($Blanco, 16px, 600, 1.5, center);
+            width: 10em;
+            position: absolute;
+            padding: 10px 15px;
+            background-color: $Naranja;
+            border-radius: 5px;
+            top: 24em;
+            box-shadow: 3px 3px 3px #00000036;
+
+            i {
+                font-size: 27px;
+                margin: 7px;
+            }
+        }
+    }
+
+    #miModal:target{
+        opacity:1;
+        pointer-events:auto;
+    }
+
+    .contact__container {
+        @include flex(flex, row, wrap, center, flex-start);
+        padding: 60px;
+        width: 70em;
+          
+        @media (max-width: 768px) {
+            @include flex(flex, column, wrap, start, center);
+            width: 100%;
+        }
+        
+        @media (min-width: 769px) and (max-width: 1200px) {
+            @include flex(flex, column, wrap, center, center);
+        }
+
+        .contact__text {
+            @include flex(flex, column, wrap, center, left);
+            width: 45%;
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+
+            @media (min-width: 769px) and (max-width: 1200px) {
+                align-items: center;
+                text-align: center;
+            }
+
+            h1 {
+                color: $Blanco;
+                @media (max-width: 768px) {
+                    font-size: 35px;
+                    padding-top: 2em;
+                }
+            }
+
+            p {
+                @include textos($Blanco, 20px, 200, 1.5, left);
+                width: 21.5em;
+                margin: 30px 0;
+                @media (max-width: 768px) {
+                    width: 100%;
+                    font-size: 20px;
+                }
+            }
+
+            .btn__backhome--contact {
+                @extend .btn__backhome;
+                margin: 0;
+                top: 16em;
+            }
+        }
+
+        .contact__form {
+            @include flex(flex, column, wrap, center, flex-end);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 45%;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+
+            @media (min-width: 769px) and (max-width: 1200px) {
+                align-items: center;
+                margin-top: 40px;
+            }
+
+            h3 {
+                font-size: 19px;
+                color: $Blanco;
+                margin-bottom: 1em;
+            }
+            h4 {
+                @include textos($Blanco, 16px, 600, 1.5, left); 
+                margin-bottom: 10px;
+            }
+
+            form {
+                width: 22em;
+
+                input[type="text"] {
+                    padding: 10px;
+                    width: 100%;
+                    background: transparent;
+                    border: 2px solid $Blanco;
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                    transition: 0.6s;
+                    &:focus {
+                        transform: scale(1.1);
+                    }
+                }
+
+                label {
+                    color: $Blanco;
+                    font-family: 'Quicksand', sans-serif;
+                }
+
+                select {
+                    padding: 8px 2px;
+                    background: transparent;
+                    border: 2px solid $Blanco;
+                    border-radius: 5px;
+                    color: $Blanco;
+                    margin-bottom: 15px;
+                    option {
+                        color: $Naranja;
+                    }
+                }
+
+                input#mujer {
+                    margin: 0 30px 25px 0;
+                }
+                input#hombre {
+                    margin-right: 30px;
+                }
+
+                textarea {
+                    width: 100%;
+                    background: transparent;
+                    padding: 10px;
+                    border: 2px solid $Blanco;
+                    border-radius: 5px;
+                    transition: 0.6s;
+                    &:focus {
+                        transform: scale(1.1);
+                    }
+                }
+
+                input[type="email"] {
+                    padding: 7px 3px;
+                    background: transparent;
+                    border: 2px solid $Blanco;
+                    border-radius: 5px;
+                    color: $Blanco;
+                    margin-bottom: 5px;
+                    width: 16.7em;
+                }
+
+                input[type="submit"] {
+                    @include textos($Celeste, 16px, 600, 1.5, center);                     
+                    font-family: 'Quicksand', sans-serif;
+                    background-color: $Blanco;
+                    padding: 10px 6px;
+                    border: none;
+                    border-radius: 5px;
+                    transition: 0.6s;
+                    &:hover {
+                        background: limegreen;
+                        color: $Blanco;
+                        box-shadow: 3px 3px 3px #0000003d;
+                    }
+                }
+
+                input[type="reset"] {
+                    @include textos($Blanco, 16px, 600, 1.5, center);                     
+                    font-family: 'Quicksand', sans-serif;
+                    background-color: $Naranja;
+                    padding: 10px 15px;                    
+                    margin-right: 13.3em;
+                    border: none;
+                    border-radius: 5px;
+                    transition: 0.6s;
+                    &:hover {
+                        transform: scale(1.05);
+                        box-shadow: 3px 3px 3px #0000003d;
+                    }
+                }
+
+                ::placeholder {
+                    color: $Blanco;
+                    font-family: 'Quicksand', sans-serif;
+                    font-size: 15px;
+                }
+            }
+
+        }
+    }
+}
+
+#footer {
+    background-color: $Blanco;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+    @media (min-width: 769px) and (max-width: 1200px) {
+        width: 100%;
+    }
+
+    .footer__container {
+        @include flex(flex, row, wrap, space-between, center);
+        padding: 20px 0 30px 0;
+        margin: auto;
+        width: 1000px;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            width: 100%;
+        }
+        @media (min-width: 769px) and (max-width: 1200px) {
+            width: 85%;
+        }
+        
+        .footer__box {
+            padding: 20px;
+            @media (max-width: 768px) {
+                @include flex(flex, column, wrap, center, center);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h3 {
+                @include textos($Celeste, 25px, 800, 1.5, left);
+                margin: 20px 0;
+                @media (max-width: 768px) { 
+                    text-align: center;
+                }
+            }
+
+            p {
+                color: $Celeste;
+                font-size: 17px;
+            }
+
+            ul {
+                display: flex;
+                
+                li {
+                    padding: 15px 20px 0 0;
+
+                    i {
+                        color: $Celeste;
+                        font-size: 35px;
+                        transition: 0.7s;
+                        &:hover {
+                            color: $Naranja;
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+
+            form {
+               color: $Celeste;
+               font-family: 'Quicksand', sans-serif; 
+               font-size: 17px;
+               ::placeholder {color: $Celeste; font-size: 15px; font-family: 'Quicksand', sans-serif;}
+                
+                input[type="email"] {
+                    background: transparent;
+                    border: 1px solid $Celeste;
+                    border-radius: 5px;
+                    padding: 8px 12px;
+                    margin-top: 10px;
+                }
+
+                input[type="submit"] {
+                    color: #F7F8FB;
+                    font-size: 18px;
+                    background: #5A93B9;
+                    border: none;
+                    border-radius: 0px 6px 6px 0px;
+                    padding: 6px 11px;
+                    position: relative;
+                    left: -9px;
+                    top: 1px;
+                    transition: 0.7s;
+                    &:hover {
+                        background-color: #47d83d;
+                    }
+                    @media (max-width: 768px) { 
+                        margin-bottom: 20px;
+                    }
+                }               
+            }
+        }
+    }
+
+    .footer__copyright {
+        height: 5em;
+        background: #292828;
+        margin-top: -6px;
+    
+        p {
+            color: $Blanco;
+            text-align: center;
+            position: relative;
+            top: 2em;
+
+            @media (max-width: 768px) {
+                font-size: 13px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            height: 7vh;
+        }
+        
+    }
+}

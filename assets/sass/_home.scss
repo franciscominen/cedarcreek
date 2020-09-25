@@ -1,0 +1,115 @@
+@keyframes h1_colors{
+    0%{ color: #F7F8FB; }
+    25%{ color: #FA902E; }
+    50%{ color: #F7F8FB;}
+    75%{ color: #5A93B9;}
+    100%{ color: #F7F8FB;}
+}
+
+#home {
+    background-image: url("../img/home-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -4em;
+    height: 100vh;
+    
+    @media (max-width: 768px) {
+        background-size: cover;
+        background-position-y: 0em;
+        background-position-x: -17.5em;
+    }
+
+    @media (min-width: 769px) and (max-width: 1200px) {
+        background-size: cover;
+        background-position-y: 0;
+        background-position-x: right;
+    }
+
+    .home__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70em;
+        height: 75vh;
+        margin: auto;
+
+        @media (max-width: 768px){
+            width: 100%;
+            align-items: center;
+            position: relative;
+            top: 18em;
+            height: 0;
+        }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            width: 100%;
+            align-items: center;
+            position: relative;
+            top: 29em;
+            height: 0;
+        }
+
+        .home__logo {
+            max-width: 600px;
+
+            @media (max-width: 768px){
+                width: 85%;
+            }
+        }
+        .home__tittle {
+            color: $Blanco;
+            font-weight: 200;
+            font-size: 38px;
+            margin: 35px 0 0 10px;
+            animation-name: h1_colors;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
+            animation-duration: 11s;
+
+            @media (max-width: 768px){
+               font-size: 20px;
+               margin-top: 20px;
+            }
+        }
+    }
+
+    .home__btn {
+        font-weight: 600;
+        display: block;
+        margin: auto;
+        padding: 15px 20px;
+        background-color: $Naranja;
+        border: none;
+        border-radius: 10px;
+        transition: 0.7s;
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 3px 3px 3px #00000042;
+        }
+
+        @media (max-width: 768px){
+            padding: 10px 15px;
+            position: relative;
+            top: 80%;
+        }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            padding: 10px 15px;
+            position: relative;
+            top: 80%;
+        }
+
+        a {
+            color: $Blanco;
+            font-size: 17px;
+
+            @media (max-width: 768px){
+                font-size: 14px;;
+            }
+        }
+
+
+    }
+}
+
+ 
