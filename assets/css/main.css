@@ -25,7 +25,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font: 800 45px "Spartan", sans-serif;
+  font: 700 45px "Poppins", sans-serif;
 }
 
 header {
@@ -64,7 +64,8 @@ header .logo__mobile--header {
     width: 90%;
     height: 60px;
     background: #F7F8FB;
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     border-radius: 0 0 25px 25px;
     box-shadow: 3px 3px 3px #0000004a;
   }
@@ -106,7 +107,7 @@ header .navbar__menu.navbar__menu--notop {
   border-radius: 0;
 }
 @media (max-width: 768px) {
-  header .navbar__menu {
+  header .navbar__menu.navbar__menu--notop {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -121,7 +122,7 @@ header .navbar__menu.navbar__menu--notop {
     transition: 0.7s;
     box-shadow: none;
   }
-  header .navbar__menu .menu__close {
+  header .navbar__menu.navbar__menu--notop .menu__close {
     display: inline-block;
     position: absolute;
     top: 5%;
@@ -172,10 +173,14 @@ header .navbar__menu .navbar__elementos .navbar__elemento {
   }
 }
 header .navbar__menu .navbar__elementos .navbar__elemento .navbar__link {
-  position: relative;
   color: #5A93B9;
-  font: bold 18px "Spartan", sans-serif;
-  padding: 7px 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  padding: 3px 0 5px 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
   border-radius: 4px;
@@ -211,7 +216,6 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__link:hover::b
 @media (max-width: 768px) {
   header .navbar__menu .navbar__elementos .navbar__elemento .navbar__link {
     border-bottom: 4px solid #FA902E;
-    border-top: 4px solid #FA902E;
     padding: 7px 0 4px 0;
   }
 }
@@ -290,6 +294,11 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   }
 }
 
+.tittle__icon {
+  max-width: 50px;
+  margin: 0 10px;
+}
+
 .h1__sub, #companies .cpn__content .cpn__tittle .h3__sub {
   border-bottom: 5px solid #FA902E;
   border-radius: 4px 0;
@@ -364,14 +373,26 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (max-width: 768px) {
   #home .home__content .home__logo {
-    width: 85%;
+    display: none;
+  }
+}
+#home .home__content .logo__mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  #home .home__content .logo__mobile {
+    display: inline-block;
+    max-width: 75%;
+    margin-top: 20px;
   }
 }
 #home .home__content .home__tittle {
   color: #F7F8FB;
   font-weight: 200;
   font-size: 38px;
-  margin: 35px 0 0 10px;
+  letter-spacing: 2px;
+  text-shadow: 2px 1px 2px #403f3f;
+  margin: 10px 0 0 10px;
   animation-name: h1_colors;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in;
@@ -381,6 +402,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   #home .home__content .home__tittle {
     font-size: 20px;
     margin-top: 20px;
+    letter-spacing: 0;
   }
 }
 #home .home__btn {
@@ -467,7 +489,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 @media (max-width: 768px) {
   #about .about__content .content__info .info__tittle {
     font-size: 30px;
-    padding-top: 4em;
+    padding-top: 1.5em;
   }
 }
 #about .about__content .content__info .info__tittle i {
@@ -551,6 +573,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 #companies .cpn__content .cpn__tittle {
   color: #F7F8FB;
   font-size: 30px;
+  font-weight: 500;
   padding: 40px 0;
 }
 #companies .cpn__content .cpn__tittle .h3__sub {
@@ -655,7 +678,8 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   #innovations .innovation__tittle {
     font-size: 35px;
     text-align: left;
-    padding: 3.5em 30px 20px 30px;
+    line-height: 0.5;
+    padding: 2em 30px 20px 30px;
   }
 }
 #innovations .innovation__subtittle {
@@ -714,8 +738,8 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 #innovations .innovation__boxs .innovation__box {
   background-color: #F7F8FB;
-  height: 125px;
-  padding: 30px 15px 40px 15px;
+  height: 135px;
+  padding: 20px 15px 40px 15px;
   text-align: center;
   border-bottom: solid 7px #FA902E;
   border-radius: 10px;
@@ -741,18 +765,16 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
     margin-bottom: 15px;
   }
 }
-#innovations .innovation__boxs .innovation__box i {
-  color: #FA902E;
-  font-size: 70px;
-  font-weight: 600;
-  line-height: 0.9;
-  text-align: center;
-  margin-bottom: 30px;
+#innovations .innovation__boxs .innovation__box img {
+  margin-bottom: 15px;
+}
+#innovations .innovation__boxs .innovation__box .box__icon {
+  max-width: 90px;
 }
 #innovations .innovation__boxs .innovation__box h3 {
   color: #FA902E;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 25px;
+  font-weight: 500;
   line-height: 1.5;
   text-align: center;
   padding-bottom: 20px;
@@ -760,17 +782,17 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 #innovations .innovation__boxs .innovation__box p {
   color: #5A93B9;
   font-size: 17px;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.6;
   text-align: center;
 }
-#innovations .innovation__boxs .box__2 i {
+#innovations .innovation__boxs .box__2 img {
   animation-name: produc;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-duration: 6s;
 }
-#innovations .innovation__boxs .box__3 i {
+#innovations .innovation__boxs .box__3 img {
   animation-name: security_rotate;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -818,8 +840,11 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   box-shadow: 3px 3px 8px -4px rgba(0, 0, 0, 0.75);
 }
 #innovations .innovations__factors .innovation__factorinfo h3 {
-  font-size: 24px;
   color: #FA902E;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
   padding: 20px 0;
 }
 @media (max-width: 768px) {
@@ -830,7 +855,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 #innovations .innovations__factors .innovation__factorinfo p {
   color: #5A93B9;
   font-size: 17px;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.6;
   text-align: left;
 }
@@ -888,14 +913,14 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 #innovations .innovations__factors .innovation__factor:hover {
   box-shadow: 3px 3px 8px -4px rgba(0, 0, 0, 0.75);
 }
-#innovations .innovations__factors .innovation__factor:hover i {
+#innovations .innovations__factors .innovation__factor:hover img {
   opacity: 0;
 }
 #innovations .innovations__factors .innovation__factor:hover .factor__descrip {
   opacity: 1;
 }
-#innovations .innovations__factors .innovation__factor i {
-  font-size: 45px;
+#innovations .innovations__factors .innovation__factor img {
+  max-width: 70px;
   transition: 0.5s;
 }
 #innovations .innovations__factors .innovation__factor .factor__descrip {
@@ -907,14 +932,26 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 #innovations .innovations__factors .innovation__factor .factor__descrip h4 {
   margin: 0;
-  font-size: 17px;
+  font-size: 21px;
+  font-weight: 600;
   margin-top: 14px;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  #innovations .innovations__factors .innovation__factor .factor__descrip h4 {
+    font-size: 19px;
+  }
 }
 #innovations .innovations__factors .innovation__factor .factor__descrip h5 {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   margin: 3px;
+}
+@media (max-width: 768px) {
+  #innovations .innovations__factors .innovation__factor .factor__descrip h5 {
+    font-size: 16px;
+  }
 }
 @media (max-width: 768px) {
   #innovations .innovations__factors .innovation__factor {
@@ -937,7 +974,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (max-width: 768px) {
   #team .team__tittle {
-    padding-top: 3.5em;
+    padding-top: 1.5em;
     font-size: 35px;
   }
 }
@@ -1015,7 +1052,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 #team .team__container .team__boxizq .team__info--izq h4 {
   color: #F7F8FB;
-  font-size: 35px;
+  font-size: 33px;
   margin: 50px 0 0 0;
   padding: 0;
 }
@@ -1028,12 +1065,14 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   display: inline-block;
   color: #F7F8FB;
   font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   padding: 0;
   margin: 15px 0px;
 }
 @media (max-width: 768px) {
   #team .team__container .team__boxizq .team__info--izq h5 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 #team .team__container .team__boxizq .team__info--izq p {
@@ -1099,7 +1138,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 #team .team__container .team__boxder .team__info--der h4 {
   color: #F7F8FB;
-  font-size: 35px;
+  font-size: 33px;
   margin: 50px 0 0 0;
   padding: 0;
 }
@@ -1112,12 +1151,14 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   display: inline-block;
   color: #F7F8FB;
   font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   padding: 0;
   margin: 15px 0px;
 }
 @media (max-width: 768px) {
   #team .team__container .team__boxder .team__info--der h5 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 #team .team__container .team__boxder .team__info--der p {
@@ -1144,7 +1185,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (max-width: 768px) {
   #gallery .gallery__tittle {
-    padding-top: 3.5em;
+    padding-top: 1.5em;
     font-size: 35px;
   }
 }
@@ -1186,18 +1227,18 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
     grid-template-rows: repeat(3, 24%) 33%;
   }
 }
-#gallery .gallery__images .gallery__img1, #gallery .gallery__images .gallery__img2, #gallery .gallery__images .gallery__img3, #gallery .gallery__images .gallery__img4, #gallery .gallery__images .gallery__img5, #gallery .gallery__images .gallery__img6, #gallery .gallery__images .gallery__img7 {
+#gallery .gallery__images .gallery__img1, #gallery .gallery__images .gallery__img2, #gallery .gallery__images .gallery__img3, #gallery .gallery__images .gallery__img4, #gallery .gallery__images .gallery__img5, #gallery .gallery__images .gallery__img6, #gallery .gallery__images .gallery__img7, #gallery .gallery__images .gallery__img8 {
   border: 3px solid #5A93B9;
   border-radius: 3px;
   display: flex;
   align-items: flex-end;
   transition: 0.6s;
 }
-#gallery .gallery__images .gallery__img1:hover, #gallery .gallery__images .gallery__img2:hover, #gallery .gallery__images .gallery__img3:hover, #gallery .gallery__images .gallery__img4:hover, #gallery .gallery__images .gallery__img5:hover, #gallery .gallery__images .gallery__img6:hover, #gallery .gallery__images .gallery__img7:hover {
+#gallery .gallery__images .gallery__img1:hover, #gallery .gallery__images .gallery__img2:hover, #gallery .gallery__images .gallery__img3:hover, #gallery .gallery__images .gallery__img4:hover, #gallery .gallery__images .gallery__img5:hover, #gallery .gallery__images .gallery__img6:hover, #gallery .gallery__images .gallery__img7:hover, #gallery .gallery__images .gallery__img8:hover {
   border: 3px solid #FA902E;
   box-shadow: 3px 3px 3px #0000004a;
 }
-#gallery .gallery__images .gallery__img1 .gallery_info, #gallery .gallery__images .gallery__img2 .gallery_info, #gallery .gallery__images .gallery__img3 .gallery_info, #gallery .gallery__images .gallery__img4 .gallery_info, #gallery .gallery__images .gallery__img5 .gallery_info, #gallery .gallery__images .gallery__img6 .gallery_info, #gallery .gallery__images .gallery__img7 .gallery_info {
+#gallery .gallery__images .gallery__img1 .gallery_info, #gallery .gallery__images .gallery__img2 .gallery_info, #gallery .gallery__images .gallery__img3 .gallery_info, #gallery .gallery__images .gallery__img4 .gallery_info, #gallery .gallery__images .gallery__img5 .gallery_info, #gallery .gallery__images .gallery__img6 .gallery_info, #gallery .gallery__images .gallery__img7 .gallery_info, #gallery .gallery__images .gallery__img8 .gallery_info {
   background: #fa902e;
   background: linear-gradient(0deg, #fa902e 0%, rgba(250, 144, 46, 0) 100%);
   width: 100%;
@@ -1212,18 +1253,21 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   opacity: 0;
   transition: 0.6s;
 }
-#gallery .gallery__images .gallery__img1 .gallery_info:hover, #gallery .gallery__images .gallery__img2 .gallery_info:hover, #gallery .gallery__images .gallery__img3 .gallery_info:hover, #gallery .gallery__images .gallery__img4 .gallery_info:hover, #gallery .gallery__images .gallery__img5 .gallery_info:hover, #gallery .gallery__images .gallery__img6 .gallery_info:hover, #gallery .gallery__images .gallery__img7 .gallery_info:hover {
+#gallery .gallery__images .gallery__img1 .gallery_info:hover, #gallery .gallery__images .gallery__img2 .gallery_info:hover, #gallery .gallery__images .gallery__img3 .gallery_info:hover, #gallery .gallery__images .gallery__img4 .gallery_info:hover, #gallery .gallery__images .gallery__img5 .gallery_info:hover, #gallery .gallery__images .gallery__img6 .gallery_info:hover, #gallery .gallery__images .gallery__img7 .gallery_info:hover, #gallery .gallery__images .gallery__img8 .gallery_info:hover {
   opacity: 1;
 }
-#gallery .gallery__images .gallery__img1 .gallery_info h4, #gallery .gallery__images .gallery__img2 .gallery_info h4, #gallery .gallery__images .gallery__img3 .gallery_info h4, #gallery .gallery__images .gallery__img4 .gallery_info h4, #gallery .gallery__images .gallery__img5 .gallery_info h4, #gallery .gallery__images .gallery__img6 .gallery_info h4, #gallery .gallery__images .gallery__img7 .gallery_info h4 {
+#gallery .gallery__images .gallery__img1 .gallery_info h4, #gallery .gallery__images .gallery__img2 .gallery_info h4, #gallery .gallery__images .gallery__img3 .gallery_info h4, #gallery .gallery__images .gallery__img4 .gallery_info h4, #gallery .gallery__images .gallery__img5 .gallery_info h4, #gallery .gallery__images .gallery__img6 .gallery_info h4, #gallery .gallery__images .gallery__img7 .gallery_info h4, #gallery .gallery__images .gallery__img8 .gallery_info h4 {
   color: #F7F8FB;
-  font-size: 23px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
   margin: 0.5em 0;
 }
-#gallery .gallery__images .gallery__img1 .gallery_info p, #gallery .gallery__images .gallery__img2 .gallery_info p, #gallery .gallery__images .gallery__img3 .gallery_info p, #gallery .gallery__images .gallery__img4 .gallery_info p, #gallery .gallery__images .gallery__img5 .gallery_info p, #gallery .gallery__images .gallery__img6 .gallery_info p, #gallery .gallery__images .gallery__img7 .gallery_info p {
+#gallery .gallery__images .gallery__img1 .gallery_info p, #gallery .gallery__images .gallery__img2 .gallery_info p, #gallery .gallery__images .gallery__img3 .gallery_info p, #gallery .gallery__images .gallery__img4 .gallery_info p, #gallery .gallery__images .gallery__img5 .gallery_info p, #gallery .gallery__images .gallery__img6 .gallery_info p, #gallery .gallery__images .gallery__img7 .gallery_info p, #gallery .gallery__images .gallery__img8 .gallery_info p {
   color: #F7F8FB;
   font-size: 17px;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.5;
   text-align: left;
   width: 90%;
@@ -1267,14 +1311,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   }
 }
 #gallery .gallery__images .gallery__img5 {
-  background: url(../img/Gallery/out5.png);
   grid-area: 2/2/3/4;
-}
-@media (max-width: 768px) {
-  #gallery .gallery__images .gallery__img5 {
-    height: 230px;
-    background-size: cover;
-  }
 }
 #gallery .gallery__images .gallery__img6 {
   background: url(../img/Gallery/out6.png);
@@ -1288,19 +1325,35 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 #gallery .gallery__images .gallery__img7 {
   background: url(../img/Gallery/out7.png);
-  grid-area: 4/1/5/4;
+  background-size: cover;
+  grid-area: 4/2/5/4;
 }
 @media (max-width: 768px) {
   #gallery .gallery__images .gallery__img7 {
     height: 200px;
     background-size: cover;
-    background-position-x: -6em;
-    margin-bottom: 3em;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #gallery .gallery__images .gallery__img7 {
     margin-bottom: 3em;
+  }
+}
+#gallery .gallery__images .gallery__img8 {
+  background: url(../img/Gallery/out8.png);
+  background-size: cover;
+  grid-area: 4/1/5/2;
+}
+@media (max-width: 768px) {
+  #gallery .gallery__images .gallery__img8 {
+    height: 230px;
+    background-size: cover;
+    margin-bottom: 4em;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #gallery .gallery__images .gallery__img8 {
+    height: 22em;
   }
 }
 
@@ -1420,7 +1473,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   font-weight: 600;
   line-height: 1;
   text-align: center;
-  background-color: red;
+  background-color: #FA902E;
   padding: 10px 15px;
   font-family: "Quicksand", sans-serif;
   border: none;
@@ -1458,11 +1511,11 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
     padding: 10px 15px;
     background-color: #FA902E;
     border-radius: 5px;
-    top: 24em;
+    top: 26em;
     box-shadow: 3px 3px 3px #00000036;
   }
-  #contact .modal__btn i {
-    font-size: 27px;
+  #contact .modal__btn img {
+    max-width: 50px;
     margin: 7px;
   }
 }
@@ -1474,7 +1527,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 60px;
   width: 70em;
@@ -1523,7 +1576,6 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 @media (max-width: 768px) {
   #contact .contact__container .contact__text h1 {
     font-size: 35px;
-    padding-top: 2em;
   }
 }
 #contact .contact__container .contact__text p {
@@ -1568,16 +1620,21 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   }
 }
 #contact .contact__container .contact__form h3 {
-  font-size: 19px;
   color: #F7F8FB;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.2px;
   margin-bottom: 1em;
 }
 #contact .contact__container .contact__form h4 {
   color: #F7F8FB;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 500;
   line-height: 1.5;
   text-align: left;
+  letter-spacing: 0.3px;
   margin-bottom: 10px;
 }
 #contact .contact__container .contact__form form {
@@ -1663,7 +1720,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   font-family: "Quicksand", sans-serif;
   background-color: #FA902E;
   padding: 10px 15px;
-  margin-right: 13.3em;
+  margin-right: 11.5em;
   border: none;
   border-radius: 5px;
   transition: 0.6s;
@@ -1673,7 +1730,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   box-shadow: 3px 3px 3px #0000003d;
 }
 #contact .contact__container .contact__form form ::placeholder {
-  color: #F7F8FB;
+  color: #555861;
   font-family: "Quicksand", sans-serif;
   font-size: 15px;
 }
@@ -1696,7 +1753,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px 0 30px 0;
   margin: auto;
   width: 1000px;
@@ -1704,6 +1761,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 @media (max-width: 768px) {
   #footer .footer__container {
     flex-direction: column;
+    align-items: center;
     width: 100%;
   }
 }
@@ -1733,6 +1791,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   font-weight: 800;
   line-height: 1.5;
   text-align: left;
+  letter-spacing: 3px;
   margin: 20px 0;
 }
 @media (max-width: 768px) {
@@ -1743,6 +1802,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 #footer .footer__container .footer__box p {
   color: #5A93B9;
   font-size: 17px;
+  margin: 10px 0;
 }
 #footer .footer__container .footer__box ul {
   display: flex;

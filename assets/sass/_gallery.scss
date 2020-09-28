@@ -7,7 +7,7 @@
         text-align: center;
 
         @media (max-width: 768px) {
-            padding-top: 3.5em;
+            padding-top: 1.5em;
             font-size: 35px;
         }
     }
@@ -38,7 +38,7 @@
         }
 
             
-        .gallery__img1, .gallery__img2, .gallery__img3, .gallery__img4, .gallery__img5, .gallery__img6, .gallery__img7 {
+        .gallery__img1, .gallery__img2, .gallery__img3, .gallery__img4, .gallery__img5, .gallery__img6, .gallery__img7, .gallery__img8 {
             border: 3px solid $Celeste;
             border-radius: 3px;
             display: flex;
@@ -63,12 +63,11 @@
                 }
 
                 h4 {
-                    color: $Blanco;
-                    font-size: 23px;
+                    @include textos($Blanco, 25px, 500, 1.5, left);
                     margin: 0.5em 0;
                 }
                 p {
-                    @include textos($Blanco, 17px, 200, 1.5, left); 
+                    @include textos($Blanco, 17px, 400, 1.5, left); 
                     width: 90%;
                     margin: 0;
                     padding: 0;
@@ -105,12 +104,7 @@
             }
         }
         .gallery__img5 {
-            background: url(../img/Gallery/out5.png);
             grid-area: 2 / 2 / 3 / 4;
-            @media (max-width: 768px) {
-                height: 230px;
-                background-size: cover;
-            }
         }
         .gallery__img6 {
             background: url(../img/Gallery/out6.png);
@@ -122,15 +116,27 @@
         }
         .gallery__img7 {
             background: url(../img/Gallery/out7.png);
-            grid-area: 4 / 1 / 5 / 4;
+            background-size: cover;
+            grid-area: 4 / 2 / 5 / 4;
             @media (max-width: 768px) {
                 height: 200px;
                 background-size: cover;
-                background-position-x: -6em;
-                margin-bottom: 3em;
             }
             @media (min-width: 769px) and (max-width: 1200px) {
                 margin-bottom: 3em;
+            }
+        }
+        .gallery__img8 {
+            background: url(../img/Gallery/out8.png);
+            background-size: cover;
+            grid-area: 4 / 1 / 5 / 2;
+            @media (max-width: 768px) {
+                height: 230px;
+                background-size: cover;
+                margin-bottom: 4em;
+            }
+            @media (min-width: 769px) and (max-width: 1200px) {
+               height: 22em;
             }
         }
     }

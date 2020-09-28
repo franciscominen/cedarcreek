@@ -23,7 +23,8 @@
         @media (max-width: 768px) {
             font-size: 35px;
             text-align: left;
-            padding: 3.5em 30px 20px 30px;
+            line-height: .5;
+            padding: 2em 30px 20px 30px;
         }
     }
 
@@ -62,8 +63,8 @@
 
         .innovation__box {
             background-color: $Blanco;
-            height: 125px;
-            padding: 30px 15px 40px 15px;
+            height: 135px;
+            padding: 20px 15px 40px 15px;
             text-align: center;
             border-bottom: solid 7px $Naranja;
             border-radius: 10px;
@@ -84,21 +85,25 @@
                 margin-bottom: 15px;
             }
 
-            i {
-                @include textos($Naranja, 70px, 600, 0.9, center);
-                margin-bottom: 30px;
+            img {
+                margin-bottom: 15px;
             }
+
+            .box__icon {
+                max-width: 90px;
+            }
+
             h3 {
-                @include textos($Naranja, 24px, 700, 1.5, center);
+                @include textos($Naranja, 25px, 500, 1.5, center);
                 padding-bottom: 20px;
             }
             p {
-                @include textos($Celeste, 17px, 200, 1.6, center);
+                @include textos($Celeste, 17px, 400, 1.6, center);
             }            
         }
 
         .box__2 {
-            i {
+            img {
                 animation-name: produc;
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
@@ -106,7 +111,7 @@
             }
         }
         .box__3 {
-            i {
+            img {
                 animation-name: security_rotate;
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
@@ -143,15 +148,14 @@
             }
 
             h3{
-                font-size: 24px;
-                color: $Naranja;
+                @include textos($Naranja, 25px, 500, 1.4, left);
                 padding: 20px 0;
                 @media (max-width: 768px) {
                    font-size: 20px;
                 }
             }
             p {
-                @include textos($Celeste, 17px, 200, 1.6, left);
+                @include textos($Celeste, 17px, 400, 1.6, left);
             }
             a {
                 border: 1px solid #FA902E;
@@ -207,7 +211,7 @@
                 box-shadow: 3px 3px 8px -4px rgba(0,0,0,0.75);
             }
 
-            &:hover i {
+            &:hover img {
                 opacity: 0;
             }
             
@@ -215,8 +219,8 @@
                 opacity: 1;
             }
 
-            i{
-                font-size: 45px;
+            img{
+                max-width: 70px;
                 transition: 0.5s;
             }
 
@@ -229,14 +233,23 @@
 
                 h4{
                     margin: 0;
-                    font-size: 17px;
-                    margin-top: 14px;  
+                    font-size: 21px;
+                    font-weight: 600;
+                    margin-top: 14px; 
+                    line-height: 1;
+                    @media (max-width: 768px) {
+                        font-size: 19px;
+                    } 
                 }
                 h5 {
                     margin: 0;
-                    font-size: 16px;
+                    font-size: 17px;
                     font-weight: 400;
                     margin: 3px;
+
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                    } 
                 }
             }
 

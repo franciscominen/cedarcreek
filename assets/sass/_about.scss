@@ -34,7 +34,7 @@
 
                 @media (max-width: 768px) {
                     font-size: 30px;
-                    padding-top: 4em;
+                    padding-top: 1.5em;
                  }
 
                 i {
@@ -107,6 +107,7 @@
         .cpn__tittle {
             color: $Blanco;
             font-size: 30px;
+            font-weight: 500;
             padding: 40px 0;
             .h3__sub {
                 @extend .h1__sub;

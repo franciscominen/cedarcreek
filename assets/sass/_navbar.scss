@@ -27,7 +27,7 @@ header {
             @include flex(flex, row, wrap, center, center);
             @include sizes(90%, 60px);
             background:$Blanco;
-            position: fixed;
+            position: sticky;
             border-radius: 0 0 25px 25px;
             box-shadow: 3px 3px 3px #0000004a;        
             
@@ -64,26 +64,25 @@ header {
         &.navbar__menu--notop {
             width: 100%;
             border-radius: 0;
-        }
 
-        @media (max-width: 768px) {
-            @include flex(flex, column, wrap, space-around, center);
-            @include sizes(90%, 30em);
-            position: fixed;
-            top: -50em;
-            background-color: $Blanco;
-            border-radius: 0px 0px 30px 30px;
-            transition: 0.7s;
-            box-shadow: none;
+            @media (max-width: 768px) {
+                @include flex(flex, column, wrap, space-around, center);
+                @include sizes(90%, 30em);
+                position: fixed;
+                top: -50em;
+                background-color: $Blanco;
+                border-radius: 0px 0px 30px 30px;
+                transition: 0.7s;
+                box-shadow: none;
 
-            .menu__close {
-                display: inline-block;
-                position: absolute;
-                top: 5%;
-                left: 85%;
-                width: 23px;
+                .menu__close {
+                    display: inline-block;
+                    position: absolute;
+                    top: 5%;
+                    left: 85%;
+                    width: 23px;
+                }
             }
-
         }
 
         @media (min-width: 769px) and (max-width: 1200px) {
@@ -118,10 +117,10 @@ header {
                 }
     
                 .navbar__link {
+                    @include textos($Celeste, 20px, 600, 1, center);
+                    font-family: 'Poppins', sans-serif;
                     position: relative;
-                    color: $Celeste;
-                    font: bold 18px 'Spartan', sans-serif;
-                    padding: 7px 0;
+                    padding: 3px 0 5px 0;
                     border-top: 4px solid transparent;
                     border-bottom: 4px solid transparent;
                     border-radius: 4px;
@@ -157,8 +156,7 @@ header {
                     }
 
                     @media (max-width: 768px) {
-                        border-bottom: 4px solid $Naranja;
-                        border-top: 4px solid $Naranja;
+                        border-bottom: 4px solid $Naranja;                        
                         padding: 7px 0 4px 0;
                     }
 

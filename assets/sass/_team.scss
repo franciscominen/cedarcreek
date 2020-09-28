@@ -6,7 +6,7 @@
         padding-top: 50px;
 
         @media (max-width: 768px) {
-            padding-top: 3.5em;
+            padding-top: 1.5em;
             font-size: 35px;
         }
     }
@@ -70,7 +70,7 @@
 
                 h4 {
                     color: $Blanco;
-                    font-size: 35px;
+                    font-size: 33px;
                     margin: 50px 0 0 0;
                     padding: 0;
                     @media (max-width: 768px) {
@@ -81,11 +81,13 @@
                     display: inline-block;
                     color: $Blanco;
                     font-size: 25px;
+                    font-weight: 500;
+                    letter-spacing: 0.5px;
                     padding: 0;
                     margin: 15px 0px;
 
                     @media (max-width: 768px) {
-                        font-size: 16px;
+                        font-size: 18px;
                     }
                 }
                 p {
@@ -142,7 +144,7 @@
 
                 h4 {
                     color: $Blanco;
-                    font-size: 35px;
+                    font-size: 33px;
                     margin: 50px 0 0 0;
                     padding: 0;
                     @media (max-width: 768px) {
@@ -153,11 +155,13 @@
                     display: inline-block;
                     color: $Blanco;
                     font-size: 25px;
+                    font-weight: 500;
+                    letter-spacing: .5px;
                     padding: 0;
                     margin: 15px 0px;
 
                     @media (max-width: 768px) {
-                        font-size: 16px;
+                        font-size: 18px;
                     }
                 }
                 p {

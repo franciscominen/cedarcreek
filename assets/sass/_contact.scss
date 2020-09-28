@@ -114,7 +114,7 @@
 
             input[type="reset"] {
                 @include textos($Blanco, 16px, 600, 1, center); 
-                background-color: red;
+                background-color: $Naranja;
                 padding: 10px 15px;
                 font-family: 'Quicksand', sans-serif;
                 border: none;
@@ -147,11 +147,11 @@
             padding: 10px 15px;
             background-color: $Naranja;
             border-radius: 5px;
-            top: 24em;
+            top: 26em;
             box-shadow: 3px 3px 3px #00000036;
 
-            i {
-                font-size: 27px;
+            img {
+                max-width: 50px;
                 margin: 7px;
             }
         }
@@ -163,7 +163,7 @@
     }
 
     .contact__container {
-        @include flex(flex, row, wrap, center, flex-start);
+        @include flex(flex, row, wrap, space-between, flex-start);
         padding: 60px;
         width: 70em;
           
@@ -193,7 +193,6 @@
                 color: $Blanco;
                 @media (max-width: 768px) {
                     font-size: 35px;
-                    padding-top: 2em;
                 }
             }
 
@@ -231,12 +230,13 @@
             }
 
             h3 {
-                font-size: 19px;
-                color: $Blanco;
+                @include textos($Blanco, 20px, 500, 1.5, center); 
+                letter-spacing: .2px;
                 margin-bottom: 1em;
             }
             h4 {
-                @include textos($Blanco, 16px, 600, 1.5, left); 
+                @include textos($Blanco, 17px, 500, 1.5, left);
+                letter-spacing: .3px; 
                 margin-bottom: 10px;
             }
 
@@ -322,7 +322,7 @@
                     font-family: 'Quicksand', sans-serif;
                     background-color: $Naranja;
                     padding: 10px 15px;                    
-                    margin-right: 13.3em;
+                    margin-right: 11.5em;
                     border: none;
                     border-radius: 5px;
                     transition: 0.6s;
@@ -333,7 +333,7 @@
                 }
 
                 ::placeholder {
-                    color: $Blanco;
+                    color: #555861;
                     font-family: 'Quicksand', sans-serif;
                     font-size: 15px;
                 }
@@ -353,12 +353,13 @@
     }
 
     .footer__container {
-        @include flex(flex, row, wrap, space-between, center);
+        @include flex(flex, row, wrap, space-between, flex-start);
         padding: 20px 0 30px 0;
         margin: auto;
         width: 1000px;
         @media (max-width: 768px) {
             flex-direction: column;
+            align-items: center;
             width: 100%;
         }
         @media (min-width: 769px) and (max-width: 1200px) {
@@ -376,6 +377,7 @@
 
             h3 {
                 @include textos($Celeste, 25px, 800, 1.5, left);
+                letter-spacing: 3px;
                 margin: 20px 0;
                 @media (max-width: 768px) { 
                     text-align: center;
@@ -385,6 +387,7 @@
             p {
                 color: $Celeste;
                 font-size: 17px;
+                margin: 10px 0;
             }
 
             ul {
