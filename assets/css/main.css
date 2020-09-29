@@ -545,60 +545,55 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   }
 }
 
-#brands {
-  background-color: #FA902E;
-  height: 45vh;
-}
-@media (max-width: 768px) {
-  #brands {
-    height: 21em;
-  }
-}
-#brands .brands__tittle {
-  color: #F7F8FB;
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 1;
-  text-align: center;
-  padding: 40px 0;
-}
-#brands .brands__tittle span {
-  border-bottom: 5px solid #5A93B9;
-  border-radius: 4px 0;
-}
-@media (max-width: 768px) {
-  #brands .brands__tittle {
-    font-size: 22px;
-  }
-}
-#brands .owl-carousel {
-  width: 80%;
-  padding-top: 20px;
-  margin: auto;
-}
-#brands .owl-carousel .item {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-#brands .owl-carousel .item a img {
-  max-width: 120px;
-  transition: 0.3s;
-}
-#brands .owl-carousel .item a img:hover {
-  transform: scale(1.1);
-}
-#brands .owl-carousel .owl-dot span {
-  margin-top: 30px;
-  background-color: #F7F8FB;
-  transition: 0.5s;
-}
-#brands .owl-carousel .owl-dot:hover span {
-  background-color: #5A93B9;
-}
+/* #brands {
+    background-color: $Naranja;
+    height: 45vh;
+    @media (max-width: 768px) {
+        height: 21em;
+    }
 
+    .brands__tittle {
+        @include textos($Blanco, 30px, 600, 1, center);
+        padding: 40px 0;
+        span {
+            border-bottom: 5px solid $Celeste;
+            border-radius: 4px 0;
+        }
+        @media (max-width: 768px) {
+            font-size: 22px;
+         }
+    }
+
+    .owl-carousel {
+        width: 80%;
+        padding-top: 20px;
+        margin: auto;
+
+        .item {
+            @include flex(flex, row, wrap, center, center);
+            a {
+                img{
+                    max-width: 120px;
+                    transition: .3s;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        .owl-dot {
+            span {
+              margin-top: 30px; 
+              background-color: $Blanco;
+              transition: .5s; 
+            } 
+            &:hover span {
+                background-color: $Celeste; 
+            }          
+        }
+    }
+} */
 @keyframes produc {
   0% {
     transform: rotate(0deg);
