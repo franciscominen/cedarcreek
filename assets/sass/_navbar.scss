@@ -64,7 +64,6 @@ header {
         &.navbar__menu--notop {
             width: 100%;
             border-radius: 0;
-
             @media (max-width: 768px) {
                 @include flex(flex, column, wrap, space-around, center);
                 @include sizes(90%, 30em);
@@ -74,16 +73,28 @@ header {
                 border-radius: 0px 0px 30px 30px;
                 transition: 0.7s;
                 box-shadow: none;
-
-                .menu__close {
-                    display: inline-block;
-                    position: absolute;
-                    top: 5%;
-                    left: 85%;
-                    width: 23px;
-                }
             }
         }
+
+        @media (max-width: 768px) {
+            @include flex(flex, column, wrap, space-around, center);
+            @include sizes(90%, 30em);
+            position: fixed;
+            top: -50em;
+            background-color: $Blanco;
+            border-radius: 0px 0px 30px 30px;
+            transition: 0.7s;
+            box-shadow: none;
+
+            .menu__close {
+                display: inline-block;
+                position: absolute;
+                top: 5%;
+                left: 85%;
+                width: 23px;
+            }
+        }
+        
 
         @media (min-width: 769px) and (max-width: 1200px) {
             width: 100%;

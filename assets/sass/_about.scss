@@ -1,167 +1,115 @@
 #about {
-    background-color: $Celeste;
-
-    .about__content{
-        height: 80vh;
-        @include flex(flex, row, wrap, center, center);
-
+    @include flex(flex, row, wrap, center, center);
+    
+    .about__container {
+        @include flex(flex, row, wrap, space-between, center);
+        padding: 60px;
+        height: 75vh;
         @media (max-width: 768px) {
-            height: 85%;
+            height: 90%;
             padding: 15px 40px;
         }
 
-        @media (min-width: 769px) and (max-width: 1200px) {
-            height: 70vh;
-            width: 100%;
-            padding: 15px 40px;
-            flex-direction: column;
-        }
-        
-        .content__info {
-            width: 500px;
+        .about__info {
             z-index: 2;
+            width: 45%;
 
             @media (max-width: 768px) {
-               width: 100%;
-            }
-            @media (min-width: 769px) and (max-width: 1200px) {
-                width: 65%;
+                width: 100%;
             }
 
-            .info__tittle {
-                color: $Blanco;
-                display: inline-block;
+            .about__tittle {
+                color: $Blanco;   
+                span {
+                    border-bottom: 5px solid $Naranja;
+                    border-radius: 4px 0;
+                }
 
                 @media (max-width: 768px) {
                     font-size: 30px;
                     padding-top: 1.5em;
-                 }
+                }
 
-                i {
-                    font-size: 50px;
-                    margin-left: 10px;
-                    @media (max-width: 768px) {
-                        font-size: 35px;
+            }
+
+            .about__text {
+                @include textos($Blanco, 22px, 300, 1.6, left);
+                width: 490px;
+                margin: 30px 0;
+                @media (max-width: 768px) {
+                    font-size: 20px;
+                    width: 100%;
+                 }
+            }
+        }
+  
+        .about__logo {
+            @include flex(flex, row, wrap, center, center);
+            width: 45%;
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+
+            .about__img {
+                --animate-duration: 15s;
+                max-width: 90%;
+                position: relative;
+                left: 4em;
+                @media (max-width: 768px) {
+                    width: 90%;
+                    left: 0;
+                }
+            }
+        }
+    }    
+}
+
+#brands {
+    background-color: $Naranja;
+    height: 45vh;
+    @media (max-width: 768px) {
+        height: 21em;
+    }
+
+    .brands__tittle {
+        @include textos($Blanco, 30px, 600, 1, center);
+        padding: 40px 0;
+        span {
+            border-bottom: 5px solid $Celeste;
+            border-radius: 4px 0;
+        }
+        @media (max-width: 768px) {
+            font-size: 22px;
+         }
+    }
+
+    .owl-carousel {
+        width: 80%;
+        padding-top: 20px;
+        margin: auto;
+
+        .item {
+            @include flex(flex, row, wrap, center, center);
+            a {
+                img{
+                    max-width: 120px;
+                    transition: .3s;
+                    &:hover {
+                        transform: scale(1.1);
                     }
                 }
             }
-
-            .info__text {
-                @include textos($Blanco, 23px, 200, 1.6, left);
-                margin-top: 20px;
-
-                @media (max-width: 768px) {
-                    font-size: 20px;
-                 }
-            }
         }
 
-        .content__logo {
-            width: 415px;
-
-            @media (max-width: 768px) {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-
-            @media (min-width: 769px) and (max-width: 1200px) {
-                width: 60%;
-                display: flex;
-                justify-content: center;
-            }
-
-            .content__img {
-                --animate-duration: 15s;
-                @media (max-width: 768px) {
-                    max-width: 100%;
-                }
-            }
+        .owl-dot {
+            span {
+              margin-top: 30px; 
+              background-color: $Blanco;
+              transition: .5s; 
+            } 
+            &:hover span {
+                background-color: $Celeste; 
+            }          
         }
-    }
-}
-
-#companies {
-    background-color: $Naranja;
-    height: 50vh;
-    @media (max-width: 768px) {
-        height: 100%;
-    }
-    @media (min-width: 769px) and (max-width: 1200px) {
-        height: 26vh;
-    }
-    
-
-    .cpn__content{
-        width: 950px;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        @media (max-width: 768px) {
-            width: 100%;
-        }
-        @media (min-width: 769px) and (max-width: 1200px) {
-            width: 99%;
-        }
-
-        .cpn__tittle {
-            color: $Blanco;
-            font-size: 30px;
-            font-weight: 500;
-            padding: 40px 0;
-            .h3__sub {
-                @extend .h1__sub;
-                border-color: $Celeste;
-            }
-
-
-            @media (max-width: 768px) {
-                font-size: 20px;
-                text-align: center;
-            }
-            @media (min-width: 769px) and (max-width: 1200px) {
-                text-align: center;
-                width: 100%;
-            }
-        }
-   
-        .owl-carousel {
-            width: 950px;
-            margin: auto;
-            @media (max-width: 768px) {
-                width: 100%;
-            }
-            @media (min-width: 769px) and (max-width: 1200px) {
-                width: 100%;
-            }
-
-            .item {
-                margin: 20px 30px 0 30px;
-                max-width: 120px;
-                transition: 0.7s;
-                filter: grayscale(1);
-                &:hover{
-                    transform: scale(1.1);
-                    filter: none;
-                }
-                @media (max-width: 768px) {
-                    filter: none;
-                }
-                @media (min-width: 769px) and (max-width: 1200px) {
-                    filter: none;
-                }
-            }
-
-            .owl-nav {
-                display: flex;
-                justify-content: center;
-                
-                span {
-                    font-size: 55px;
-                    color: $Blanco;
-                    padding: 0 20px;
-                }
-            }
-        }   
     }
 }

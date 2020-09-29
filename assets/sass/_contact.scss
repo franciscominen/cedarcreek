@@ -394,14 +394,15 @@
                 display: flex;
                 
                 li {
-                    padding: 15px 20px 0 0;
+                    padding: 15px 25px 0px 0px;
+                    @media (max-width: 768px) { 
+                        padding: 15px;
+                    }
 
-                    i {
-                        color: $Celeste;
-                        font-size: 35px;
-                        transition: 0.7s;
+                    img {
+                        max-width: 40px;
+                        transition: .3s;
                         &:hover {
-                            color: $Naranja;
                             transform: scale(1.1);
                         }
                     }
