@@ -86,16 +86,13 @@
             }
 
             img {
-                margin-bottom: 15px;
-            }
-
-            .box__icon {
                 max-width: 90px;
             }
 
             h3 {
                 @include textos($Naranja, 25px, 500, 1.5, center);
                 padding-bottom: 20px;
+                margin-top: 15px;
             }
             p {
                 @include textos($Celeste, 17px, 400, 1.6, center);
@@ -103,7 +100,7 @@
         }
 
         .box__2 {
-            img {
+            .box__icon {
                 animation-name: produc;
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
@@ -111,7 +108,7 @@
             }
         }
         .box__3 {
-            img {
+            .box__icon {
                 animation-name: security_rotate;
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;

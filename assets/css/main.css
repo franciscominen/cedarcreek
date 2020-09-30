@@ -756,9 +756,6 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   }
 }
 #innovations .innovation__boxs .innovation__box img {
-  margin-bottom: 15px;
-}
-#innovations .innovation__boxs .innovation__box .box__icon {
   max-width: 90px;
 }
 #innovations .innovation__boxs .innovation__box h3 {
@@ -768,6 +765,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   line-height: 1.5;
   text-align: center;
   padding-bottom: 20px;
+  margin-top: 15px;
 }
 #innovations .innovation__boxs .innovation__box p {
   color: #5A93B9;
@@ -776,13 +774,13 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   line-height: 1.6;
   text-align: center;
 }
-#innovations .innovation__boxs .box__2 img {
+#innovations .innovation__boxs .box__2 .box__icon {
   animation-name: produc;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-duration: 6s;
 }
-#innovations .innovation__boxs .box__3 img {
+#innovations .innovation__boxs .box__3 .box__icon {
   animation-name: security_rotate;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
