@@ -1,16 +1,15 @@
-@keyframes h1_colors{
-    0%{ color: #F7F8FB; }
-    25%{ color: #FA902E; }
-    50%{ color: #F7F8FB;}
-    75%{ color: #5A93B9;}
-    100%{ color: #F7F8FB;}
+@keyframes colors{
+    0%{ background-color: #F7F8FB; }
+    25%{ background-color: #FA902E; }
+    50%{ background-color: #5A93B9;;}
+    75%{ background-color: #FA902E;}
+    100%{ background-color: #F7F8FB;}
 }
 
 #home {
     background-image: url("../img/home-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: -4em;
     height: 100vh;
     
     @media (max-width: 768px) {
@@ -26,101 +25,121 @@
     }
 
     .home__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 70em;
-        height: 75vh;
+        @include flex(flex, row, wrap, space-around, center);
+        width: 89em;
         margin: auto;
+        position: relative;
+        top: 11em;
 
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
+            @include flex(flex, column, wrap, center, center);
             width: 100%;
-            align-items: center;
-            position: relative;
-            top: 18em;
-            height: 0;
+            top: 27%;
         }
 
-        @media (min-width: 769px) and (max-width: 1200px) {
-            width: 100%;
-            align-items: center;
-            position: relative;
-            top: 29em;
-            height: 0;
+        .home__tittles {
+
+            h1 {
+                @include textos($Blanco, 86px, 600, 1, left);
+                display: inline-block;
+                letter-spacing: -2.3px;
+                text-shadow: 4px 4px 6px #0000008c;
+
+                @media (max-width: 768px) {
+                    font-size: 52px;
+                }
+            }
+
+            figure {
+                background: $Blanco;
+                box-shadow: 4px 4px 6px #0000008c;
+                height: 4px;
+                animation-name: colors;
+                animation-duration: 6s;
+                animation-iteration-count: infinite;
+            }
+
+            h2 {
+                @include textos($Blanco, 57px, 500, 1, left);
+                margin-top: 15px;
+                text-shadow: 4px 4px 6px #0000008c;
+                span {
+                    color: $Naranja;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 33px;
+                }
+            }
+
+            h3 {
+                @include textos($Blanco, 26px, 300, 1, left);
+                margin-top: 10px;
+                text-shadow: 4px 4px 6px #0000008c;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+            }
         }
 
-        .home__logo {
-            max-width: 600px;
-
-            @media (max-width: 768px){
+        .home__card {
+            position: relative;
+            top: 2em;
+            background-color: #fbfcffbf;
+            box-shadow: 4px 4px 6px #0000008c;
+            padding: 20px;
+            border-radius: 15px;
+            transition: .8s;
+            @include sizes(15em, 17em);
+            @include flex(flex, column, wrap, space-around, center);
+            &:hover {
+                transform: translateY(-0.6em);
+            }
+            @media (max-width: 768px) {
                 display: none;
             }
-        }
-        .logo__mobile {
-            display: none;
-            @media (max-width: 768px){
-                display: inline-block;
-                max-width: 75%;
-                margin-top: 20px;
+
+            img {
+                max-width: 70px;
+            }
+
+            p {
+                @include textos($Celeste, 17px, 500, 1.3, left);
+            }
+
+            .home__card--btn {
+                color: $Blanco;
+                font-weight: 600;
+                padding: 10px 20px;
+                border-radius: 7px;
+                background-color: #FA902E;
+                transition: .3s;
+                &:hover {
+                  box-shadow: inset 10px 9px 9px -4px rgba(0,0,0,0.38);  
+                }
             }
         }
 
-        .home__tittle {
-            color: $Blanco;
-            font-weight: 200;
-            font-size: 38px;
-            letter-spacing: 2px;
-            text-shadow: 2px 1px 2px #403f3f;
-            margin: 10px 0 0 10px;
-            animation-name: h1_colors;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in;
-            animation-duration: 11s;
-
-            @media (max-width: 768px){
-               font-size: 20px;
-               margin-top: 20px;
-               letter-spacing: 0;
-            }
-        }
     }
 
-    .home__btn {
-        font-weight: 600;
-        display: block;
-        margin: auto;
-        padding: 15px 20px;
-        background-color: $Naranja;
-        border: none;
-        border-radius: 10px;
-        transition: 0.7s;
-        &:hover {
-            transform: scale(1.1);
-            box-shadow: 3px 3px 3px #00000042;
-        }
+    .home__mobile--btn {
+        display: none;
 
-        @media (max-width: 768px){
-            padding: 10px 15px;
-            position: relative;
-            top: 80%;
-        }
-
-        @media (min-width: 769px) and (max-width: 1200px) {
-            padding: 10px 15px;
-            position: relative;
-            top: 80%;
-        }
-
-        a {
+        @media (max-width: 768px) {
+            display: block;
+            padding: 10px 20px;
+            background-color: #fa902ec9;
+            border-radius: 7px;
+            text-align: center;
+            width: 9em;
+            margin: auto;
             color: $Blanco;
-            font-size: 17px;
-
-            @media (max-width: 768px){
-                font-size: 14px;;
-            }
+            font-weight: 500;
+            position: relative;
+            top: 40%;
+            box-shadow: 4px 4px 6px #0000008c;
         }
-
-
     }
 }
 

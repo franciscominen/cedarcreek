@@ -21,10 +21,12 @@
         padding: 50px 0 20px 0;
 
         @media (max-width: 768px) {
-            font-size: 35px;
+            font-size: 29px;
             text-align: left;
-            line-height: .5;
-            padding: 2em 30px 20px 30px;
+            line-height: 0;
+            display: block;
+            margin-left: 1.5em;
+            width: 10em;
         }
     }
 
@@ -33,7 +35,7 @@
         padding: 10px 0 40px 0;
         @media (max-width: 768px) {
             text-align: left;
-            padding: 10px 30px 40px 30px;
+            padding: 10px 40px 40px 40px;
             font-size: 18px;
         }
     }

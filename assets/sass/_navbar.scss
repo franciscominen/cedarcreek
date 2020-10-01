@@ -103,7 +103,7 @@ header {
         .navbar__elementos {
             @include flex(flex, row, wrap, center, center);
             position: relative;
-            bottom: 4px;
+            bottom: 6px;
     
             @media (max-width: 768px) {
                 @include flex(flex, column, wrap, center, center);

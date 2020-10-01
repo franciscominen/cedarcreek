@@ -19,6 +19,7 @@
             width: 85%;
             margin: auto;
             font-size: 19px;
+            line-height: 1.5;
         }
     }
 
@@ -50,13 +51,15 @@
             }
 
             img {
-                max-width: 200px;
+                max-width: 270px;
                 position: relative;
-                left: 9em;
+                left: 10em;
+                z-index: 3;
                 transition: 1s;
                 @media (max-width: 768px) {
-                    height: 420px;
                     left: 6em;
+                    max-width: 180px;
+                    height: 350px;
                 }
             }
 
@@ -66,6 +69,9 @@
                 transition: opacity 1.5s;
                 @media (max-width: 768px) {
                     padding: 0;
+                    position: relative;
+                    right: 1em;
+                    top: 2em;
                 }
 
                 h4 {
@@ -75,6 +81,7 @@
                     padding: 0;
                     @media (max-width: 768px) {
                         font-size: 25px;
+                        margin: 0;
                     }
                 }
                 h5 {
@@ -88,13 +95,14 @@
 
                     @media (max-width: 768px) {
                         font-size: 18px;
+                        margin: 5px 0;
                     }
                 }
                 p {
                     @include textos($Blanco, 18px, 200, 1.5, left);
                     width: 215px;
                     @media (max-width: 768px) {
-                        font-size: 16px;
+                        font-size: 15px;
                         width: 165px;
                         padding: 10px;
                     }
@@ -111,7 +119,7 @@
             &:hover img{
                 transform: translateX(9em);
                 @media (max-width: 768px) {
-                    transform: translateX(5em);
+                    transform: translateX(4.5em);
                 }
             }
             &:hover .team__info--der{
@@ -123,13 +131,13 @@
             }
 
             img {
-                max-width: 200px;
+                max-width: 270px;
                 position: relative;
-                right: 9em;
+                right: 10em;
                 transition: 1s;
                 @media (max-width: 768px) {
-                    max-width: 200px;
-                    height: 420px;
+                    max-width: 180px;
+                    height: 350px;
                     right: 5em;
                 }
             }
@@ -140,6 +148,8 @@
                 transition: opacity 1.5s;
                 @media (max-width: 768px) {
                     padding: 0;
+                    position: relative;
+                    left: 1em;
                 }
 
                 h4 {
@@ -162,6 +172,7 @@
 
                     @media (max-width: 768px) {
                         font-size: 18px;
+                        margin: 5px 0;
                     }
                 }
                 p {
@@ -170,9 +181,14 @@
                     @media (max-width: 768px) {
                         font-size: 15px;
                         width: 165px;
-                        padding: 4px;
+                        padding: 10px 0px 0px 5px;
                     }
                 }   
+                .team__info--modificar {
+                    @media (max-width: 768px) {
+                        padding: 5px 18px 5px 2px;
+                    }
+                }
             }
         }
     }
