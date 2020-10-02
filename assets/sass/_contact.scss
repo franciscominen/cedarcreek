@@ -350,9 +350,8 @@
 }
 
 #footer {
-    background-image: url("../img/footer-bg.png");
-    background-repeat: no-repeat;
-    background-size: auto;
+    background-color: $Blanco;
+    
     @media (max-width: 768px) {
         width: 100%;
         background-color: $Blanco;

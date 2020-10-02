@@ -37,6 +37,12 @@
             top: 27%;
         }
 
+        @media (min-width: 769px) and (max-width: 1200px) {
+            @include flex(flex, column, wrap, center, center);
+            width: 100%;
+            top: 16em;
+        }
+
         .home__tittles {
 
             h1 {
@@ -96,8 +102,13 @@
             &:hover {
                 transform: translateY(-0.6em);
             }
+
             @media (max-width: 768px) {
                 display: none;
+            }
+
+            @media (min-width: 769px) and (max-width: 1200px) {
+                top: 7em;
             }
 
             img {

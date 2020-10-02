@@ -151,7 +151,9 @@ header .navbar__menu.navbar__menu--notop {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   header .navbar__menu {
-    width: 100%;
+    position: relative;
+    top: 2.5em;
+    width: 90%;
   }
 }
 header .navbar__menu .navbar__elementos {
@@ -382,6 +384,17 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
     top: 27%;
   }
 }
+@media (min-width: 769px) and (max-width: 1200px) {
+  #home .home__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 16em;
+  }
+}
 #home .home__content .home__tittles h1 {
   color: #F7F8FB;
   font-size: 86px;
@@ -458,6 +471,11 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 @media (max-width: 768px) {
   #home .home__content .home__card {
     display: none;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  #home .home__content .home__card {
+    top: 7em;
   }
 }
 #home .home__content .home__card img {
@@ -1789,9 +1807,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 
 #footer {
-  background-image: url("../img/footer-bg.png");
-  background-repeat: no-repeat;
-  background-size: auto;
+  background-color: #F7F8FB;
 }
 @media (max-width: 768px) {
   #footer {

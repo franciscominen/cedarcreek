@@ -97,7 +97,9 @@ header {
         
 
         @media (min-width: 769px) and (max-width: 1200px) {
-            width: 100%;
+            position: relative;
+            top: 2.5em;
+            width: 90%;
         }
 
         .navbar__elementos {
