@@ -204,6 +204,7 @@
             border-radius: 15em;
             padding: 20px;
             cursor: default;
+            user-select: none;
             transition: 0.7s;
 
             &:hover {

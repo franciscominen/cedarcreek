@@ -975,6 +975,8 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   border-radius: 15em;
   padding: 20px;
   cursor: default;
+  -webkit-user-select: none;
+          user-select: none;
   transition: 0.7s;
 }
 #innovations .innovations__factors .innovation__factor:hover {
