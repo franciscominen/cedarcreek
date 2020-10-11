@@ -1,14 +1,11 @@
+
 #contact {
-    display: flex;
-    justify-content: center;
     background-image: url("../img/contact-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
 
     @media (max-width: 768px) {
-        height: 78vh;
     }
-
 
     .modal{
         position:fixed;
@@ -23,10 +20,11 @@
         z-index: 3;
 
         .modal__contenido{
-            background-color: $Celeste;
+            background-color: #5a93b9d9;
             border: 3px solid $Naranja;
             border-radius: 10px;
-            width:100%;
+            width: 22em;
+            margin: auto;
             padding: 10px 10px;
             position: relative;
 
@@ -41,9 +39,8 @@
             }
 
             h4 {
-                font-size: 16px;
-                color: $Blanco;
-                margin-bottom: 10px;
+                @include textos($Blanco, 17px, 500, 1.5, left);
+                margin: 16px 0px 6px 0px;
             }
 
             input[type="text"] {
@@ -52,7 +49,6 @@
                 background: transparent;
                 border: 2px solid $Blanco;
                 border-radius: 5px;
-                margin-bottom: 10px;
                 transition: 0.6s;
             }
             label {
@@ -66,14 +62,13 @@
                 border: 2px solid $Blanco;
                 border-radius: 5px;
                 color: $Blanco;
-                margin: 10px 0;
                 option {
                     color: $Naranja;
                 }
             }
 
             input#mujer {
-                margin: 0 10px 15px 0;
+                margin-right: 10px;
             }
             input#hombre {
                 margin-right: 10px;
@@ -90,11 +85,11 @@
 
             input[type="email"] {
                 padding: 7px 3px;
+                margin-bottom: 15px;
                 background: transparent;
                 border: 2px solid $Blanco;
                 border-radius: 5px;
                 color: $Blanco;
-                margin: 10px 0;
                 width: 17em;
             }
 
@@ -139,27 +134,6 @@
         }
     }
 
-    .modal__btn {
-        display: none;
-
-        @media (max-width: 768px) {
-            @include flex(flex, row, wrap, center, center);
-            @include textos($Blanco, 16px, 600, 1.5, center);
-            width: 10em;
-            position: absolute;
-            padding: 10px 15px;
-            background-color: $Naranja;
-            border-radius: 5px;
-            top: 21em;
-            box-shadow: 3px 3px 3px #00000036;
-
-            img {
-                max-width: 50px;
-                margin: 7px;
-            }
-        }
-    }
-
     #miModal:target{
         opacity:1;
         pointer-events:auto;
@@ -168,6 +142,7 @@
     .contact__container {
         @include flex(flex, row, wrap, space-between, flex-start);
         padding: 60px;
+        margin: auto;
         width: 70em;
           
         @media (max-width: 768px) {
@@ -178,6 +153,7 @@
         
         @media (min-width: 769px) and (max-width: 1200px) {
             @include flex(flex, column, wrap, center, center);
+            width: 100%;
         }
 
         .contact__text {
@@ -185,7 +161,7 @@
             width: 45%;
 
             @media (max-width: 768px) {
-                width: 100%;
+                width: 16em;
             }
 
             @media (min-width: 769px) and (max-width: 1200px) {
@@ -197,6 +173,7 @@
                 color: $Blanco;
                 @media (max-width: 768px) {
                     font-size: 35px;
+                    margin-top: 0.5em;
                 }
             }
 
@@ -208,12 +185,36 @@
                     width: 100%;
                     font-size: 17px;
                 }
+                @media (min-width: 769px) and (max-width: 1200px) {
+                    width: 100%;
+                    text-align: center;
+                }
             }
 
             .btn__backhome--contact {
                 @extend .btn__backhome;
                 margin: 0;
-                top: 16em;
+                top: 15em;
+            }
+        }
+
+        .modal__btn {
+            display: none;
+    
+            @media (max-width: 768px) {
+                @include flex(flex, row, wrap, center, center);
+                @include textos($Blanco, 16px, 600, 1.5, center);
+                width: 10em;
+                padding: 10px 15px;
+                background-color: $Naranja;
+                border-radius: 5px;
+                box-shadow: 3px 3px 3px #00000036;
+                margin: auto;
+    
+                img {
+                    max-width: 50px;
+                    margin: 7px;
+                }
             }
         }
 
@@ -256,7 +257,7 @@
                     margin-bottom: 15px;
                     transition: 0.6s;
                     &:focus {
-                        transform: scale(1.1);
+                        transform: scale(1.05);
                     }
                 }
 
@@ -292,7 +293,7 @@
                     border-radius: 5px;
                     transition: 0.6s;
                     &:focus {
-                        transform: scale(1.1);
+                        transform: scale(1.05);
                     }
                 }
 
@@ -302,7 +303,7 @@
                     border: 2px solid $Blanco;
                     border-radius: 5px;
                     color: $Blanco;
-                    margin-bottom: 5px;
+                    margin: 1em 0 2em 0;
                     width: 16.7em;
                 }
 
@@ -344,7 +345,6 @@
                     font-size: 15px;
                 }
             }
-
         }
     }
 }
@@ -372,7 +372,8 @@
             width: 100%;
         }
         @media (min-width: 769px) and (max-width: 1200px) {
-            width: 85%;
+            width: 100%;
+            justify-content: center;
         }
         
         .footer__box {
@@ -472,6 +473,5 @@
         @media (min-width: 769px) and (max-width: 1200px) {
             height: 7vh;
         }
-        
     }
 }

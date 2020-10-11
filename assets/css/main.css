@@ -30,6 +30,14 @@ h1, h2, h3, h4, h5, h6 {
   cursor: default;
 }
 
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 header {
   position: -webkit-sticky;
   position: sticky;
@@ -47,7 +55,7 @@ header .logo__mobile--header {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   header {
-    top: 0px;
+    top: 2.5em;
   }
 }
 @media (max-width: 768px) {
@@ -81,6 +89,7 @@ header .logo__mobile--header {
   header .mobile__header .logo__mobile--header {
     display: inline-block;
     position: absolute;
+    max-width: 88px;
     top: -6px;
   }
   header #nav:target {
@@ -144,7 +153,7 @@ header .navbar__menu.navbar__menu--notop {
   header .navbar__menu .menu__close {
     display: inline-block;
     position: absolute;
-    top: 5%;
+    top: 8%;
     left: 85%;
     width: 23px;
   }
@@ -152,7 +161,6 @@ header .navbar__menu.navbar__menu--notop {
 @media (min-width: 769px) and (max-width: 1200px) {
   header .navbar__menu {
     position: relative;
-    top: 2.5em;
     width: 90%;
   }
 }
@@ -163,7 +171,7 @@ header .navbar__menu .navbar__elementos {
   justify-content: center;
   align-items: center;
   position: relative;
-  bottom: 6px;
+  bottom: 9px;
 }
 @media (max-width: 768px) {
   header .navbar__menu .navbar__elementos {
@@ -185,7 +193,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento {
 }
 @media (max-width: 768px) {
   header .navbar__menu .navbar__elementos .navbar__elemento {
-    margin: 20px 0;
+    margin: 17px 0;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -243,10 +251,13 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__link:hover::b
 header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo {
   position: relative;
   top: 12px;
+  max-width: 99px;
   transition: 0.7s;
 }
 header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
-  transform: scale(1.1);
+  animation-name: rotateLogo;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.7s;
 }
 @media (max-width: 768px) {
   header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo {
@@ -371,7 +382,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   width: 89em;
   margin: auto;
   position: relative;
-  top: 11em;
+  top: 14em;
 }
 @media (max-width: 768px) {
   #home .home__content {
@@ -402,12 +413,11 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   line-height: 1;
   text-align: left;
   display: inline-block;
-  letter-spacing: -2.3px;
   text-shadow: 4px 4px 6px #0000008c;
 }
 @media (max-width: 768px) {
   #home .home__content .home__tittles h1 {
-    font-size: 52px;
+    font-size: 49px;
   }
 }
 #home .home__content .home__tittles figure {
@@ -424,7 +434,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   font-weight: 500;
   line-height: 1;
   text-align: left;
-  margin-top: 15px;
+  margin-top: 20px;
   text-shadow: 4px 4px 6px #0000008c;
 }
 #home .home__content .home__tittles h2 span {
@@ -432,7 +442,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (max-width: 768px) {
   #home .home__content .home__tittles h2 {
-    font-size: 33px;
+    font-size: 34px;
   }
 }
 #home .home__content .home__tittles h3 {
@@ -450,13 +460,6 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   }
 }
 #home .home__content .home__card {
-  position: relative;
-  top: 2em;
-  background-color: #fbfcffbf;
-  box-shadow: 4px 4px 6px #0000008c;
-  padding: 20px;
-  border-radius: 15px;
-  transition: 0.8s;
   width: 15em;
   height: 17em;
   display: flex;
@@ -464,6 +467,13 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+  top: 1em;
+  background-color: #fbfcffbf;
+  box-shadow: 4px 4px 6px #0000008c;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.8s;
 }
 #home .home__content .home__card:hover {
   transform: translateY(-0.6em);
@@ -537,8 +547,10 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (max-width: 768px) {
   #about .about__container {
+    width: 100%;
     height: 90%;
-    padding: 15px 40px;
+    flex-direction: column;
+    padding: 0px;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -553,7 +565,8 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (max-width: 768px) {
   #about .about__container .about__info {
-    width: 100%;
+    width: 17em;
+    margin: auto;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -599,7 +612,9 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (max-width: 768px) {
   #about .about__container .about__logo {
-    width: 100%;
+    width: 20em;
+    margin: auto;
+    margin-bottom: 2em;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -631,7 +646,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (max-width: 768px) {
   #brands {
-    height: 21em;
+    height: 23em;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -654,6 +669,9 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 @media (max-width: 768px) {
   #brands .brands__tittle {
     font-size: 22px;
+    line-height: 1.5;
+    width: 12em;
+    margin: auto;
   }
 }
 #brands .owl-carousel {
@@ -790,7 +808,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 #innovations .innovation__boxs .innovation__box {
   background-color: #F7F8FB;
   height: 135px;
-  padding: 20px 15px 40px 15px;
+  padding: 20px 19px 40px 19px;
   text-align: center;
   border-bottom: solid 7px #FA902E;
   border-radius: 10px;
@@ -1016,6 +1034,10 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   }
 }
 
+#team {
+  background-image: url(../img/team-bg.png);
+  padding-bottom: 2em;
+}
 #team .team__tittle {
   color: #F7F8FB;
   text-align: center;
@@ -1079,7 +1101,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   }
 }
 #team .team__container .team__boxizq img {
-  max-width: 270px;
+  max-width: 250px;
   position: relative;
   left: 10em;
   z-index: 3;
@@ -1171,7 +1193,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   }
 }
 #team .team__container .team__boxder img {
-  max-width: 270px;
+  max-width: 250px;
   position: relative;
   right: 10em;
   transition: 1s;
@@ -1303,6 +1325,9 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   border: 3px solid #FA902E;
   box-shadow: 3px 3px 3px #0000004a;
 }
+#gallery .gallery__images .gallery__img1:hover .gallery_info, #gallery .gallery__images .gallery__img2:hover .gallery_info, #gallery .gallery__images .gallery__img3:hover .gallery_info, #gallery .gallery__images .gallery__img4:hover .gallery_info, #gallery .gallery__images .gallery__img5:hover .gallery_info, #gallery .gallery__images .gallery__img6:hover .gallery_info, #gallery .gallery__images .gallery__img7:hover .gallery_info, #gallery .gallery__images .gallery__img8:hover .gallery_info {
+  opacity: 1;
+}
 #gallery .gallery__images .gallery__img1 .gallery_info, #gallery .gallery__images .gallery__img2 .gallery_info, #gallery .gallery__images .gallery__img3 .gallery_info, #gallery .gallery__images .gallery__img4 .gallery_info, #gallery .gallery__images .gallery__img5 .gallery_info, #gallery .gallery__images .gallery__img6 .gallery_info, #gallery .gallery__images .gallery__img7 .gallery_info, #gallery .gallery__images .gallery__img8 .gallery_info {
   background: #fa902e;
   background: linear-gradient(0deg, #fa902e 0%, rgba(250, 144, 46, 0) 100%);
@@ -1318,9 +1343,6 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   opacity: 0;
   transition: 0.6s;
 }
-#gallery .gallery__images .gallery__img1 .gallery_info:hover, #gallery .gallery__images .gallery__img2 .gallery_info:hover, #gallery .gallery__images .gallery__img3 .gallery_info:hover, #gallery .gallery__images .gallery__img4 .gallery_info:hover, #gallery .gallery__images .gallery__img5 .gallery_info:hover, #gallery .gallery__images .gallery__img6 .gallery_info:hover, #gallery .gallery__images .gallery__img7 .gallery_info:hover, #gallery .gallery__images .gallery__img8 .gallery_info:hover {
-  opacity: 1;
-}
 #gallery .gallery__images .gallery__img1 .gallery_info h4, #gallery .gallery__images .gallery__img2 .gallery_info h4, #gallery .gallery__images .gallery__img3 .gallery_info h4, #gallery .gallery__images .gallery__img4 .gallery_info h4, #gallery .gallery__images .gallery__img5 .gallery_info h4, #gallery .gallery__images .gallery__img6 .gallery_info h4, #gallery .gallery__images .gallery__img7 .gallery_info h4, #gallery .gallery__images .gallery__img8 .gallery_info h4 {
   color: #F7F8FB;
   font-size: 25px;
@@ -1328,6 +1350,11 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   line-height: 1.5;
   text-align: left;
   margin: 0.5em 0;
+}
+@media (max-width: 768px) {
+  #gallery .gallery__images .gallery__img1 .gallery_info h4, #gallery .gallery__images .gallery__img2 .gallery_info h4, #gallery .gallery__images .gallery__img3 .gallery_info h4, #gallery .gallery__images .gallery__img4 .gallery_info h4, #gallery .gallery__images .gallery__img5 .gallery_info h4, #gallery .gallery__images .gallery__img6 .gallery_info h4, #gallery .gallery__images .gallery__img7 .gallery_info h4, #gallery .gallery__images .gallery__img8 .gallery_info h4 {
+    font-size: 21px;
+  }
 }
 #gallery .gallery__images .gallery__img1 .gallery_info p, #gallery .gallery__images .gallery__img2 .gallery_info p, #gallery .gallery__images .gallery__img3 .gallery_info p, #gallery .gallery__images .gallery__img4 .gallery_info p, #gallery .gallery__images .gallery__img5 .gallery_info p, #gallery .gallery__images .gallery__img6 .gallery_info p, #gallery .gallery__images .gallery__img7 .gallery_info p, #gallery .gallery__images .gallery__img8 .gallery_info p {
   color: #F7F8FB;
@@ -1338,6 +1365,11 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   width: 90%;
   margin: 0;
   padding: 0;
+}
+@media (max-width: 768px) {
+  #gallery .gallery__images .gallery__img1 .gallery_info p, #gallery .gallery__images .gallery__img2 .gallery_info p, #gallery .gallery__images .gallery__img3 .gallery_info p, #gallery .gallery__images .gallery__img4 .gallery_info p, #gallery .gallery__images .gallery__img5 .gallery_info p, #gallery .gallery__images .gallery__img6 .gallery_info p, #gallery .gallery__images .gallery__img7 .gallery_info p, #gallery .gallery__images .gallery__img8 .gallery_info p {
+    font-size: 16px;
+  }
 }
 #gallery .gallery__images .gallery__img1 {
   background: url(../img/Gallery/out1.png);
@@ -1423,16 +1455,9 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 
 #contact {
-  display: flex;
-  justify-content: center;
   background-image: url("../img/contact-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-}
-@media (max-width: 768px) {
-  #contact {
-    height: 78vh;
-  }
 }
 #contact .modal {
   position: fixed;
@@ -1447,10 +1472,11 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   z-index: 3;
 }
 #contact .modal .modal__contenido {
-  background-color: #5A93B9;
+  background-color: #5a93b9d9;
   border: 3px solid #FA902E;
   border-radius: 10px;
-  width: 100%;
+  width: 22em;
+  margin: auto;
   padding: 10px 10px;
   position: relative;
 }
@@ -1464,9 +1490,12 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   border-radius: 5px;
 }
 #contact .modal .modal__contenido h4 {
-  font-size: 16px;
   color: #F7F8FB;
-  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  margin: 16px 0px 6px 0px;
 }
 #contact .modal .modal__contenido input[type=text] {
   padding: 10px;
@@ -1474,7 +1503,6 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   background: transparent;
   border: 2px solid #F7F8FB;
   border-radius: 5px;
-  margin-bottom: 10px;
   transition: 0.6s;
 }
 #contact .modal .modal__contenido label {
@@ -1487,13 +1515,12 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   border: 2px solid #F7F8FB;
   border-radius: 5px;
   color: #F7F8FB;
-  margin: 10px 0;
 }
 #contact .modal .modal__contenido select option {
   color: #FA902E;
 }
 #contact .modal .modal__contenido input#mujer {
-  margin: 0 10px 15px 0;
+  margin-right: 10px;
 }
 #contact .modal .modal__contenido input#hombre {
   margin-right: 10px;
@@ -1508,11 +1535,11 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 #contact .modal .modal__contenido input[type=email] {
   padding: 7px 3px;
+  margin-bottom: 15px;
   background: transparent;
   border: 2px solid #F7F8FB;
   border-radius: 5px;
   color: #F7F8FB;
-  margin: 10px 0;
   width: 17em;
 }
 #contact .modal .modal__contenido input[type=submit] {
@@ -1559,34 +1586,6 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   font-family: "Quicksand", sans-serif;
   font-size: 15px;
 }
-#contact .modal__btn {
-  display: none;
-}
-@media (max-width: 768px) {
-  #contact .modal__btn {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    color: #F7F8FB;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.5;
-    text-align: center;
-    width: 10em;
-    position: absolute;
-    padding: 10px 15px;
-    background-color: #FA902E;
-    border-radius: 5px;
-    top: 21em;
-    box-shadow: 3px 3px 3px #00000036;
-  }
-  #contact .modal__btn img {
-    max-width: 50px;
-    margin: 7px;
-  }
-}
 #contact #miModal:target {
   opacity: 1;
   pointer-events: auto;
@@ -1598,6 +1597,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   justify-content: space-between;
   align-items: flex-start;
   padding: 60px;
+  margin: auto;
   width: 70em;
 }
 @media (max-width: 768px) {
@@ -1618,6 +1618,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 }
 #contact .contact__container .contact__text {
@@ -1630,7 +1631,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (max-width: 768px) {
   #contact .contact__container .contact__text {
-    width: 100%;
+    width: 16em;
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -1645,6 +1646,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 @media (max-width: 768px) {
   #contact .contact__container .contact__text h1 {
     font-size: 35px;
+    margin-top: 0.5em;
   }
 }
 #contact .contact__container .contact__text p {
@@ -1662,9 +1664,42 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
     font-size: 17px;
   }
 }
+@media (min-width: 769px) and (max-width: 1200px) {
+  #contact .contact__container .contact__text p {
+    width: 100%;
+    text-align: center;
+  }
+}
 #contact .contact__container .contact__text .btn__backhome--contact {
   margin: 0;
-  top: 16em;
+  top: 15em;
+}
+#contact .contact__container .modal__btn {
+  display: none;
+}
+@media (max-width: 768px) {
+  #contact .contact__container .modal__btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: #F7F8FB;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    width: 10em;
+    padding: 10px 15px;
+    background-color: #FA902E;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #00000036;
+    margin: auto;
+  }
+  #contact .contact__container .modal__btn img {
+    max-width: 50px;
+    margin: 7px;
+  }
 }
 #contact .contact__container .contact__form {
   display: flex;
@@ -1719,7 +1754,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   transition: 0.6s;
 }
 #contact .contact__container .contact__form form input[type=text]:focus {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 #contact .contact__container .contact__form form label {
   color: #F7F8FB;
@@ -1751,7 +1786,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   transition: 0.6s;
 }
 #contact .contact__container .contact__form form textarea:focus {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 #contact .contact__container .contact__form form input[type=email] {
   padding: 7px 3px;
@@ -1759,7 +1794,7 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
   border: 2px solid #F7F8FB;
   border-radius: 5px;
   color: #F7F8FB;
-  margin-bottom: 5px;
+  margin: 1em 0 2em 0;
   width: 16.7em;
 }
 #contact .contact__container .contact__form form input[type=submit] {
@@ -1840,7 +1875,8 @@ header .navbar__menu .navbar__elementos .navbar__elemento .navbar__logo:hover {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   #footer .footer__container {
-    width: 85%;
+    width: 100%;
+    justify-content: center;
   }
 }
 #footer .footer__container .footer__box {

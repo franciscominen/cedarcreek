@@ -48,6 +48,9 @@
                 border: 3px solid $Naranja;
                 box-shadow: 3px 3px 3px #0000004a;
             }
+            &:hover .gallery_info {
+                opacity: 1;
+            }
 
             .gallery_info {
                 background: rgb(250,144,46);
@@ -58,19 +61,22 @@
                 text-align: left;
                 opacity: 0;
                 transition: 0.6s;
-                &:hover {
-                    opacity: 1;
-                }
-
+ 
                 h4 {
                     @include textos($Blanco, 25px, 500, 1.5, left);
                     margin: 0.5em 0;
+                    @media (max-width: 768px) {
+                        font-size: 21px;
+                    }
                 }
                 p {
                     @include textos($Blanco, 17px, 400, 1.5, left); 
                     width: 90%;
                     margin: 0;
                     padding: 0;
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                    }
                 }
             }    
         }

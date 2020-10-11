@@ -29,7 +29,7 @@
         width: 89em;
         margin: auto;
         position: relative;
-        top: 11em;
+        top: 14em;
 
         @media (max-width: 768px) {
             @include flex(flex, column, wrap, center, center);
@@ -48,11 +48,10 @@
             h1 {
                 @include textos($Blanco, 86px, 600, 1, left);
                 display: inline-block;
-                letter-spacing: -2.3px;
                 text-shadow: 4px 4px 6px #0000008c;
 
                 @media (max-width: 768px) {
-                    font-size: 52px;
+                    font-size: 49px;
                 }
             }
 
@@ -67,14 +66,14 @@
 
             h2 {
                 @include textos($Blanco, 57px, 500, 1, left);
-                margin-top: 15px;
+                margin-top: 20px;
                 text-shadow: 4px 4px 6px #0000008c;
                 span {
                     color: $Naranja;
                 }
 
                 @media (max-width: 768px) {
-                    font-size: 33px;
+                    font-size: 34px;
                 }
             }
 
@@ -90,18 +89,18 @@
         }
 
         .home__card {
+            @include sizes(15em, 17em);
+            @include flex(flex, column, wrap, space-around, center);
             position: relative;
-            top: 2em;
+            top: 1em;
             background-color: #fbfcffbf;
             box-shadow: 4px 4px 6px #0000008c;
             padding: 20px;
             border-radius: 15px;
             transition: .8s;
-            @include sizes(15em, 17em);
-            @include flex(flex, column, wrap, space-around, center);
-            &:hover {
-                transform: translateY(-0.6em);
-            }
+                &:hover {
+                    transform: translateY(-0.6em);
+                }
 
             @media (max-width: 768px) {
                 display: none;

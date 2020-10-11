@@ -5,20 +5,24 @@
         @include flex(flex, row, wrap, space-between, center);
         padding: 60px;
         height: 75vh;
+
         @media (max-width: 768px) {
-            height: 90%;
-            padding: 15px 40px;
+            @include sizes(100%, 90%);
+            flex-direction: column;
+            padding: 0px;
         }
         @media (min-width: 769px) and (max-width: 1200px) {
             flex-direction: column;
             justify-content: space-around;
         }
+
         .about__info {
             z-index: 2;
             width: 45%;
 
             @media (max-width: 768px) {
-                width: 100%;
+                width: 17em;
+                margin: auto;
             }
             @media (min-width: 769px) and (max-width: 1200px) {
                 width: 100%;
@@ -52,8 +56,11 @@
         .about__logo {
             @include flex(flex, row, wrap, center, center);
             width: 45%;
+
             @media (max-width: 768px) {
-                width: 100%;
+                width: 20em;
+                margin: auto;
+                margin-bottom: 2em;
             }
             @media (min-width: 769px) and (max-width: 1200px) {
                 width: 100%;
@@ -64,6 +71,7 @@
                 max-width: 90%;
                 position: relative;
                 left: 4em;
+
                 @media (max-width: 768px) {
                     width: 90%;
                     left: 0;
@@ -80,7 +88,7 @@
     background-color: $Naranja;
     height: 45vh;
     @media (max-width: 768px) {
-        height: 21em;
+        height: 23em;
     }
     @media (min-width: 769px) and (max-width: 1200px) {
         height: 28vh;
@@ -95,7 +103,10 @@
         }
         @media (max-width: 768px) {
             font-size: 22px;
-         }
+            line-height: 1.5;
+            width: 12em;
+            margin: auto;
+        }
     }
 
     .owl-carousel {

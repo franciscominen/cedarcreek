@@ -1,4 +1,6 @@
 #team {
+    background-image: url(../img/team-bg.png);
+    padding-bottom: 2em;
 
     .team__tittle {
         color: $Blanco;
@@ -51,7 +53,7 @@
             }
 
             img {
-                max-width: 270px;
+                max-width: 250px;
                 position: relative;
                 left: 10em;
                 z-index: 3;
@@ -131,7 +133,7 @@
             }
 
             img {
-                max-width: 270px;
+                max-width: 250px;
                 position: relative;
                 right: 10em;
                 transition: 1s;

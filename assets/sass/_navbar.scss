@@ -1,3 +1,8 @@
+@keyframes rotateLogo{
+    0%{ transform: rotate(0deg); }
+    100%{ transform: rotate(360deg); }
+}
+
 header {
     position: sticky;
     top: 30px;
@@ -14,7 +19,7 @@ header {
     }
 
     @media (min-width: 769px) and (max-width: 1200px) {
-        top: 0px;
+        top: 2.5em;
     }
 
     @media (max-width: 768px) {
@@ -42,6 +47,7 @@ header {
             .logo__mobile--header {
                 display: inline-block;
                 position: absolute;
+                max-width: 88px;
                 top: -6px;
             }
         }
@@ -89,7 +95,7 @@ header {
             .menu__close {
                 display: inline-block;
                 position: absolute;
-                top: 5%;
+                top: 8%;
                 left: 85%;
                 width: 23px;
             }
@@ -98,14 +104,13 @@ header {
 
         @media (min-width: 769px) and (max-width: 1200px) {
             position: relative;
-            top: 2.5em;
             width: 90%;
         }
 
         .navbar__elementos {
             @include flex(flex, row, wrap, center, center);
             position: relative;
-            bottom: 6px;
+            bottom: 9px;
     
             @media (max-width: 768px) {
                 @include flex(flex, column, wrap, center, center);
@@ -122,7 +127,7 @@ header {
                 margin: 0 30px;
 
                 @media (max-width: 768px) {
-                    margin: 20px 0;
+                    margin: 17px 0;
                 }
 
                 @media (min-width: 769px) and (max-width: 1200px) {
@@ -178,9 +183,12 @@ header {
                 .navbar__logo {
                     position: relative;
                     top: 12px;
+                    max-width: 99px;
                     transition: 0.7s;
                     &:hover {
-                        transform: scale(1.1);
+                        animation-name: rotateLogo;
+                        animation-timing-function: ease-in-out;
+                        animation-duration: 0.7s;
                     }
 
                     @media (max-width: 768px) {
